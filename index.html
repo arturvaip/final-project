@@ -211,9 +211,9 @@
      <button id="startButton">Start</button>
 
         <div id="gender-screen" style="display: none;">
-         <h2>?את\ה</h2>
-         <button id="boy"> בן</button>
-         <button id="girl">בת</button>
+         <h2>твой пол?</h2>
+         <button id="boy"> парень</button>
+         <button id="girl">девушка</button>
         </div>
 
         <div id="frame-1" class="frame" style="display: none;">
@@ -292,7 +292,7 @@
         </div>
 
         <div id="frame-gameover-1" class="frame" style="display:none;">
-            <h3 class="text">GAME OVER</h3>
+            <h3 class="text">Ты проиграл, ты не смог найти свою дверь.</h3>
         </div>
      
      <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
@@ -318,11 +318,11 @@
         });
 
         function askName(gender) {
-         const genderText = (gender === 'male') ? 'גבר' : 'אישה';
-         const name = prompt(` יופי! מה שמך?`);
+         const genderText = (gender === 'male') ? 'парень' : 'девушка';
+         const name = prompt(`отлично,как тебя звать?`);
 
          if (name) {
-         alert(`סופר, ${name}!`);
+         alert(`отлично, приветствую тебя, ${name}!`);
       
              player = {
              name: name,
