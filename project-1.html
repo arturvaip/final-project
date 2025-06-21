@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="he">
+    <head>
+     <style>
+
+        body, html {
+         overflow: hidden; /* Блокирует прокрутку */
+         width: 100%;
+         height: 100%;
+        }
+      
+        body {
+          background-image: url("https://thumb.ac-illust.com/78/7883eb7a5bf8b738b8bac434e63e6259_t.jpeg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-size: 100% auto; /* Увеличиваем размер фона */
+          background-position: center;
+          background-repeat: repeat-x; /* Повторяем по горизонтали */
+          text-align: center;
+          animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+          from {
+            background-position: 0 0;
+          }
+          to {
+            background-position: 1000px 0; /* Перемещаем на полную ширину */
+          }
+        }
+
+        #startButton {
+         padding: 10px 20px; 
+         font-weight: bold; 
+         cursor: pointer;  
+         width: 25vw;
+         height: 12vh;
+         font-size: 2vw;
+         background-color: #e0e270f1;
+         border-radius: 999px;
+         border: none;
+        }
+
+        #startButton:hover {
+         background-color: #e0e27083;  
+        }     
+        
+        #boy {
+         background: rgb(0, 111, 214);
+         width: 25vw;
+         height: 12vh;    
+         border-radius: 999px;   
+         font-size: 2vw;     
+         color: white; 
+        }
+
+        #girl { 
+         background: rgb(255, 107, 107);
+         color: rgb(255, 255, 255);
+         width: 25vw;
+         height: 12vh;  
+         border-radius: 999px; 
+         font-size: 2vw;          
+        }
+
+        h2 {
+         font-size: 2vw;
+         color: white;
+        }
+
+        #boy:hover {
+         background-color: rgba(0, 111, 214, 0.548);  
+        }    
+
+        #girl:hover {
+         background-color: rgba(255, 107, 107, 0.623); 
+        }    
+
+        .text {
+         color: white;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+         font-size: 3vw;
+         margin-bottom: 8vh;
+
+        }
+
+        .choice {
+         color: white;
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+         font-size: 1.5vw;
+
+        }
+
+        .frame {
+         display: flex;
+         position: relative;
+         flex-direction: column;
+         justify-content: space-between;
+         min-height: 100vh;
+        }
+
+        .knopka {
+
+         background: rgb(245, 245, 85);
+         width: 20vw;
+         height: 30vh;  
+         bottom: 5vh;
+         margin: 2vw;
+         border-radius: 20%; 
+         font-size: 1.4vw;  
+        }
+
+        .knopka:hover {
+         background: rgb(182, 182, 60);;
+         cursor: pointer;
+        }
+
+        .okno {
+          position: absolute;
+          bottom: 2vh;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+        }
+
+        #frame-1 { 
+            background-image: url(https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-aj05-p-kartinki-nochnoe-nebo-na-prozrachnom-fone-12.png); 
+            background-size: 100%;
+        }
+        #frame-2 { 
+            background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.webp); 
+            background-size: 100%;
+        }
+        #frame-3 { 
+            background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.webp); 
+            background-size: 100%;
+        }
+        #frame-4 { 
+            background-image: url(https://ybis.ru/wp-content/uploads/2023/10/fantasticheskie-peizazhi-7.webp); 
+            background-size: 110%;
+        }
+        #frame-5 { 
+            background-image: url(https://99px.ru/sstorage/53/2018/05/tmb_227726_611478.jpg); 
+            background-size: 100%;
+        }
+        #frame-6 { 
+            background-image: url(https://pibig.info/uploads/posts/2022-11/1669229974_6-pibig-info-p-angel-v-dospekhakh-krasivo-7.jpg); 
+            background-size: 100%;
+        }
+        #frame-7 { 
+            background-image: url(https://static.vecteezy.com/system/resources/previews/006/275/056/non_2x/empty-medieval-three-gates-scene-free-vector.jpg); 
+            background-size: 100%;
+        }
+
+        #frame-win {
+            background-image: url(https://cdn.pixabay.com/photo/2024/09/02/11/03/ai-generated-9016484_1280.jpg);
+            background-size: cover; 
+            background-position: center;  
+            background-repeat: no-repeat; 
+            height: 100vh;
+            width: 100vw;  
+        }
+
+        #frame-gameover-1 {
+            background-image: url(https://cdn.pixabay.com/photo/2018/05/17/11/20/end-3408301_1280.jpg);
+            background-size: cover; 
+            background-position: center;  
+            background-repeat: no-repeat; 
+            height: 100vh;
+            width: 100vw;  
+        }
+        
+     </style>
+    </head>
+    <body>
+     <button id="startButton">Start</button>
+
+        <div id="gender-screen" style="display: none;">
+         <h2>?את\ה</h2>
+         <button id="boy"> בן</button>
+         <button id="girl">בת</button>
+        </div>
+
+        <div id="frame-1" class="frame" style="display: none;">
+         <h3 class="text">Идя домой, вы замечаете яркую вспышку. Вдруг небо наполняется ярким, ослепительным светом. Глядя на это, вам кажется, будто небо сломалось — в нём появилась трещина. Внезапно вы чувствуете, как это нечто начинает вас затягивать.</h3>
+         <h4 class="choice">Ваше действие?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('strength')">Пытаться брыкаться и убежать.</button>
+             <button class="knopka" onclick="makeChoice('intelligence')">Попытаться придумать план по безопасному приземлению.</button>
+         </div>
+        </div>
+
+        <div id="frame-2" class="frame" style="display: none;">
+         <h3 class="text">Очнувшись, ты чувствуешь лёгкую головную боль. Вдруг замечаешь лес — но не обычный: яркий, неестественного бирюзового цвета. Неуверенно идёшь прямо и видишь развилку. Правая тропа заросла и почти пропала, а левая — будто только что сделанная, чистая и ухоженная.</h3>
+         <h4 class="choice">Какой же путь ты выберешь?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('agility')">правоя тропа</button>
+             <button class="knopka" onclick="makeChoice('intelligence')">левоя тропа</button>
+         </div>
+        </div>
+
+        <div id="frame-3" class="frame" style="display: none;">
+         <h3 class="text">Идя по выбранному пути, ты чувствуешь тревожность — будто кто-то наблюдает за тобой. Ты слышишь странный шум, похожий на шёпот...</h3>
+         <h4 class="choice">что же вам делать?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('intelligence')">попытаться прислушатся</button>
+             <button class="knopka" onclick="makeChoice('agility')" onclick="makeChoice('vitality')">закрыть уши, и ускорить щаг</button>
+         </div>
+        </div>
+
+        <div id="frame-4" class="frame" style="display: none;">
+         <h3 class="text">Чуть задумавшись, ты едва не падаешь в обрыв — дальше идти некуда...</h3>
+         <h4 class="choice">ваше действие?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('agility')">прыгнуть в обрыв</button>
+             <button class="knopka" onclick="makeChoice('intelligence')" onclick="makeChoice('vitality')">посторатся акуратно спустится</button>
+         </div>
+        </div>
+
+        <div id="frame-5" class="frame" style="display: none;">
+         <h3 class="text">После спуска ты продолжил идти и постепенно осознал, что что-то не так. Всё вокруг казалось неживым, а в голове мелькнула мысль: "Неужели я попал в иллюзию?"</h3>
+         <h4 class="choice">как же тебе решить эту проблему?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('agility')" onclick="makeChoice('intelligence')">посторатся сосредоточится и вернутся в реальность</button>
+             <button class="knopka" onclick="makeChoice('vitality')" onclick="makeChoice('strength')">доверится ощущением и пройти дальше</button>
+         </div>
+        </div>
+
+        <div id="frame-6" class="frame" style="display: none;">
+         <h3 class="text">Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...</h3>
+         <h4 class="choice">твои действие?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('agility')">проскочить мимо него</button>
+             <button class="knopka" onclick="makeChoice('intelligence')">подождать пока он не потеряет бдительность и обойти его</button>
+         </div>
+        </div>
+
+        <div id="frame-7" class="frame" style="display: none;">
+         <h3 class="text">Дойдя до замка, ты замечаешь трое врат. На правых — символ кулака, на средних — кроличья лапка, на левых — символ книги...</h3>
+         <h4 class="choice">куда тебе пойти?</h4>
+
+         <div class="okno">
+             <button class="knopka" onclick="makeChoice('strength'); checkDoor('strength');">в левый, веть, я сильный</button>
+             <button class="knopka" onclick="makeChoice('agility'); checkDoor('agility');">в средний, ловкость, моё всё</button>
+             <button class="knopka" onclick="makeChoice('intelligence'); checkDoor('intelligence');">в правый, магия мне по душе</button>
+         </div>
+        </div>
+
+        <div id="frame-win" class="frame" style="display:none;">
+            <h3 class="text">поздровляю! ты нашёл свою дверь.</h3>
+        </div>
+
+        <div id="frame-gameover-1" class="frame" style="display:none;">
+            <h3 class="text">GAME OVER</h3>
+        </div>
+     
+     <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
+        <script>
+
+            let player = null;
+            let currentFrame = 1;
+
+            document.getElementById('startButton').addEventListener('click', function() {
+             this.style.display = 'none';
+             document.getElementById('gender-screen').style.display = 'block';
+            });
+
+            document.getElementById('boy').addEventListener('click', function() {
+             askName('male');
+            });
+
+            document.getElementById('girl').addEventListener('click', function() {
+             askName('female');
+            });
+
+            function askName(gender) {
+             const genderText = (gender === 'male') ? 'גבר' : 'אישה';
+             const name = prompt(` יופי! מה שמך?`);
+
+             if (name) {
+             alert(`סופר, ${name}!`);
+      
+              player = {
+                name: name,
+                gender: gender,
+                    stats: {
+                      strength: 0,
+                      agility: 0,
+                      intelligence: 0,
+                      vitality: 0
+                    },
+                     choices: []
+                };
+      
+             localStorage.setItem('player', JSON.stringify(player));
+             document.getElementById('gender-screen').style.display = 'none';
+             document.getElementById('boy').style.display = 'none';
+             document.getElementById('girl').style.display = 'none';
+             document.body.style.background = 'none';
+             document.getElementById('frame-1').style.display = 'block';
+             } else {
+                  alert("???");
+                }
+            }
+
+            function makeChoice(stat) {
+             if (!player) return;
+    
+             player.stats[stat]++;
+             player.choices.push(stat);
+             localStorage.setItem('player', JSON.stringify(player));
+
+             document.getElementById(`frame-${currentFrame}`).style.display = 'none';
+             currentFrame++;
+
+                if (currentFrame <= 7) {
+                 document.getElementById(`frame-${currentFrame}`).style.display='block';
+                }
+            }
+            
+                function checkDoor(stat) {
+                    if (player.stats[stat] >= 3) {
+                      document.getElementById('frame-7').style.display = 'none';
+                      document.getElementById('frame-win').style.display = 'block';
+                    } else {
+                      document.getElementById('frame-7').style.display = 'none';
+                      document.getElementById('frame-gameover-1').style.display = 'block';
+                    }
+                }
+        
+            </script>
+    </body>
+</html>
