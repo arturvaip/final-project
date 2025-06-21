@@ -4,7 +4,7 @@
      <style>
 
         body, html {
-         overflow: hidden; /* Блокирует прокрутку */
+         overflow: hidden;
          width: 100%;
          height: 100%;
         }
@@ -16,9 +16,9 @@
           align-items: center;
           height: 100vh;
           margin: 0;
-          background-size: 100% auto; /* Увеличиваем размер фона */
+          background-size: 100% auto;
           background-position: center;
-          background-repeat: repeat-x; /* Повторяем по горизонтали */
+          background-repeat: repeat-x;
           text-align: center;
           animation: moveBackground 20s linear infinite;
         }
@@ -28,7 +28,7 @@
             background-position: 0 0;
           }
           to {
-            background-position: 1000px 0; /* Перемещаем на полную ширину */
+            background-position: 1000px 0;
           }
         }
 
@@ -179,7 +179,7 @@
          left: 0;
          width: 100%;
          height: 100%;
-         background-color: #1e1e1e; /* или любой цвет, пока грузится */
+         background-color: #1e1e1e;
          display: flex;
          justify-content: center;
          align-items: center;
@@ -296,42 +296,45 @@
         </div>
      
      <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
-        <script>
+    <script>
+       window.addEventListener('load', function() {
+         document.getElementById('preloader').style.display = 'none';
+        });
 
-            let player = null;
-            let currentFrame = 1;
+        let player = null;
+        let currentFrame = 1;
 
-            document.getElementById('startButton').addEventListener('click', function() {
-             this.style.display = 'none';
-             document.getElementById('gender-screen').style.display = 'block';
-            });
+        document.getElementById('startButton').addEventListener('click', function() {
+         this.style.display = 'none';
+         document.getElementById('gender-screen').style.display = 'block';
+        });
 
-            document.getElementById('boy').addEventListener('click', function() {
-             askName('male');
-            });
+        document.getElementById('boy').addEventListener('click', function() {
+         askName('male');
+        });
 
-            document.getElementById('girl').addEventListener('click', function() {
-             askName('female');
-            });
+        document.getElementById('girl').addEventListener('click', function() {
+         askName('female');
+        });
 
-            function askName(gender) {
-             const genderText = (gender === 'male') ? 'גבר' : 'אישה';
-             const name = prompt(` יופי! מה שמך?`);
+        function askName(gender) {
+         const genderText = (gender === 'male') ? 'גבר' : 'אישה';
+         const name = prompt(` יופי! מה שמך?`);
 
-             if (name) {
-             alert(`סופר, ${name}!`);
+         if (name) {
+         alert(`סופר, ${name}!`);
       
-              player = {
-                name: name,
-                gender: gender,
-                    stats: {
-                      strength: 0,
-                      agility: 0,
-                      intelligence: 0,
-                      vitality: 0
-                    },
-                     choices: []
-                };
+             player = {
+             name: name,
+             gender: gender,
+             stats: {
+                 strength: 0,
+                 agility: 0,
+                 intelligence: 0,
+                 vitality: 0
+                },
+             choices: []
+            };
       
              localStorage.setItem('player', JSON.stringify(player));
              document.getElementById('gender-screen').style.display = 'none';
@@ -339,36 +342,36 @@
              document.getElementById('girl').style.display = 'none';
              document.body.style.background = 'none';
              document.getElementById('frame-1').style.display = 'block';
-             } else {
-                  alert("???");
-                }
+         } else {
+             alert("???");
             }
+        }
 
-            function makeChoice(stat) {
-             if (!player) return;
+        function makeChoice(stat) {
+         if (!player) return;
     
-             player.stats[stat]++;
-             player.choices.push(stat);
-             localStorage.setItem('player', JSON.stringify(player));
+         player.stats[stat]++;
+            player.choices.push(stat);
+         localStorage.setItem('player', JSON.stringify(player));
 
-             document.getElementById(`frame-${currentFrame}`).style.display = 'none';
-             currentFrame++;
+         document.getElementById(`frame-${currentFrame}`).style.display = 'none';
+          currentFrame++;
 
-                if (currentFrame <= 7) {
-                 document.getElementById(`frame-${currentFrame}`).style.display='block';
-                }
+            if (currentFrame <= 7) {
+             document.getElementById(`frame-${currentFrame}`).style.display='block';
             }
+        }
             
-                function checkDoor(stat) {
-                    if (player.stats[stat] >= 3) {
-                      document.getElementById('frame-7').style.display = 'none';
-                      document.getElementById('frame-win').style.display = 'block';
-                    } else {
-                      document.getElementById('frame-7').style.display = 'none';
-                      document.getElementById('frame-gameover-1').style.display = 'block';
-                    }
+        function checkDoor(stat) {
+            if (player.stats[stat] >= 3) {
+             document.getElementById('frame-7').style.display = 'none';
+             document.getElementById('frame-win').style.display = 'block';
+            }  else {
+                 document.getElementById('frame-7').style.display = 'none';
+                 document.getElementById('frame-gameover-1').style.display = 'block';
                 }
+        }
         
-            </script>
+    </script>
     </body>
 </html>
