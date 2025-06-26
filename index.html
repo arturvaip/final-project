@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="ru">
     <head>
      <style>
 
@@ -42,6 +42,23 @@
          background-color: #e0e270f1;
          border-radius: 999px;
          border: none;
+        }
+
+        .tex {
+         display: flex;
+         color: rgb(245, 245, 85);
+         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+         font-size: 3vw;
+         margin-bottom: 8vh;
+         flex-direction: column;
+         justify-content: flex-start;
+         height: 15vh;
+        }
+
+        .tex-2 {
+         color: rgb(245, 245, 245);
+         font-size: 2vw;
+         margin-bottom: 8vh;
         }
 
         #startButton:hover {
@@ -208,8 +225,20 @@
          <div class="loader"></div>
      </div>
 
-     <button id="startButton">Start</button>
-
+     <div id="tex"> 
+        <div>
+            <div  class="tex">
+             <h7>Trail of Choices</h7>
+            </div>
+            <div class="tex-2">
+             <h8>Обычный день внезапно прерывается вспышкой света.</h8>
+            </div>
+            <div class="tex-2">
+             <h8>Что это - конец или начало? Сделай свой выбор… и узнай правду.</h8>
+            </div>
+         <button id="startButton">Start</button>
+        </div>
+     </div>
         <div id="gender-screen" style="display: none;">
          <h2>твой пол?</h2>
          <button id="boy"> парень</button>
@@ -231,8 +260,8 @@
          <h4 class="choice">Какой же путь ты выберешь?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')">правоя тропа</button>
-             <button class="knopka" onclick="makeChoice('intelligence')">левоя тропа</button>
+             <button class="knopka" onclick="makeChoice('agility')">правая тропа</button>
+             <button class="knopka" onclick="makeChoice('intelligence')">левая тропа</button>
          </div>
         </div>
 
@@ -261,8 +290,8 @@
          <h4 class="choice">как же тебе решить эту проблему?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')" onclick="makeChoice('intelligence')">посторатся сосредоточится и вернутся в реальность</button>
-             <button class="knopka" onclick="makeChoice('vitality')" onclick="makeChoice('strength')">доверится ощущением и пройти дальше</button>
+             <button class="knopka" onclick="makeChoice('agility'); makeChoice('intelligence');">посторатся сосредоточится и вернутся в реальность</button>
+             <button class="knopka" onclick="makeChoice('vitality'); makeChoice('strength');">доверится ощущением и пройти дальше</button>
          </div>
         </div>
 
@@ -307,6 +336,7 @@
         document.getElementById('startButton').addEventListener('click', function() {
          this.style.display = 'none';
          document.getElementById('gender-screen').style.display = 'block';
+         document.getElementById('tex').style.display = 'none';
         });
 
         document.getElementById('boy').addEventListener('click', function() {
