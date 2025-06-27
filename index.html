@@ -32,6 +32,47 @@
           }
         }
 
+        .lang {
+         position: fixed;
+         bottom: 2vh;
+         left: 2vw;
+         z-index: 10000;
+        } 
+        
+        #lang {
+         font-weight: bold; 
+         cursor: pointer;  
+         width: 6vw;
+         height: 4vh;
+         font-size: 1vw;
+         background-color: #0084fff1;
+         border-radius: 999px;
+         border: none;
+        }
+
+        #lang:hover {
+         background-color: #003e79f1;
+        }
+
+        [dir="rtl"] .frame {
+         text-align: right;
+         padding: 0 5vw;
+        }
+
+        [dir="rtl"] .text, 
+        [dir="rtl"] .choice {
+         width: 90%;
+         margin-left: auto;
+         margin-right: auto;
+         word-wrap: break-word;
+        }
+
+        [dir="rtl"] .okno {
+         right: 50%;
+         left: auto;
+         transform: translateX(50%);
+        }
+
         #startButton {
          padding: 10px 20px; 
          font-weight: bold; 
@@ -145,31 +186,66 @@
 
         #frame-1 { 
             background-image: url(https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-aj05-p-kartinki-nochnoe-nebo-na-prozrachnom-fone-12.png); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-2 { 
             background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.png); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-3 { 
             background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.png); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-4 { 
+            width: 100vw;
+            height: 100vh;
             background-image: url(https://cdn.pixabay.com/photo/2020/11/19/19/59/mountain-5759680_1280.jpg); 
-            background-size: 110%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-5 { 
             background-image: url(https://99px.ru/sstorage/53/2018/05/tmb_227726_611478.jpg); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-6 { 
             background-image: url(https://pibig.info/uploads/posts/2022-11/1669229974_6-pibig-info-p-angel-v-dospekhakh-krasivo-7.jpg); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
         #frame-7 { 
             background-image: url(https://static.vecteezy.com/system/resources/previews/006/275/056/non_2x/empty-medieval-three-gates-scene-free-vector.jpg); 
-            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
         }
 
         #frame-win {
@@ -189,6 +265,15 @@
             height: 100vh;
             width: 100vw;  
         }
+
+        #frame-gameover-2 {
+            background-image: url(https://images.unsplash.com/photo-1563824460668-8d28331a877f?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover; 
+            background-position: center;  
+            background-repeat: no-repeat; 
+            height: 100vh;
+            width: 100vw;  
+        }        
 
         #preloader {
          position: fixed;
@@ -225,107 +310,242 @@
          <div class="loader"></div>
      </div>
 
-     <div id="tex"> 
+     <div class="lang">
+         <button id="lang" data-lang-key="r38">язык</button>
+         <button id="rus" style="display: none;"> Русский </button>
+         <button id="he" style="display: none;"> עברית </button>
+     </div>
+
+     <div id="tex"  lang="he" dir="rtl"> 
         <div>
             <div  class="tex">
              <h7>Trail of Choices</h7>
             </div>
             <div class="tex-2">
-             <h8>Обычный день внезапно прерывается вспышкой света.</h8>
+             <h8 data-lang-key="r1">Обычный день внезапно прерывается вспышкой света.</h8>
             </div>
             <div class="tex-2">
-             <h8>Что это - конец или начало? Сделай свой выбор… и узнай правду.</h8>
+             <h8 data-lang-key="r2">Что это - конец или начало? Сделай свой выбор… и узнай правду.</h8>
             </div>
-         <button id="startButton">Start</button>
+         <button id="startButton" data-lang-key="r3">Начать</button>
         </div>
      </div>
         <div id="gender-screen" style="display: none;">
-         <h2>твой пол?</h2>
-         <button id="boy"> парень</button>
-         <button id="girl">девушка</button>
+         <h2 data-lang-key="r4">твой пол?</h2>
+         <button id="boy" data-lang-key="r5"> парень</button>
+         <button id="girl" data-lang-key="r6">девушка</button>
         </div>
 
-        <div id="frame-1" class="frame" style="display: none;">
-         <h3 class="text">Идя домой, вы замечаете яркую вспышку. Вдруг небо наполняется ярким, ослепительным светом. Глядя на это, вам кажется, будто небо сломалось — в нём появилась трещина. Внезапно вы чувствуете, как это нечто начинает вас затягивать.</h3>
-         <h4 class="choice">Ваше действие?</h4>
+        <div id="frame-1" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 class="text" data-lang-key="r7">Идя домой, вы замечаете яркую вспышку. Вдруг небо наполняется ярким, ослепительным светом. Глядя на это, вам кажется, будто небо сломалось — в нём появилась трещина. Внезапно вы чувствуете, как это нечто начинает вас затягивать.</h3>
+         <h4 class="choice" data-lang-key="r8">Ваше действие?</h4>
 
-         <div class="okno">
-             <button class="knopka" onclick="makeChoice('strength')">Пытаться брыкаться и убежать.</button>
-             <button class="knopka" onclick="makeChoice('intelligence')">Попытаться придумать план по безопасному приземлению.</button>
+         <div class="okno" >
+             <button class="knopka" onclick="makeChoice('strength')" data-lang-key="r9">Пытаться брыкаться и убежать.</button>
+             <button class="knopka" onclick="makeChoice('intelligence')" data-lang-key="r10">Попытаться придумать план по безопасному приземлению.</button>
          </div>
         </div>
 
-        <div id="frame-2" class="frame" style="display: none;">
-         <h3 class="text">Очнувшись, ты чувствуешь лёгкую головную боль. Вдруг замечаешь лес — но не обычный: яркий, неестественного бирюзового цвета. Неуверенно идёшь прямо и видишь развилку. Правая тропа заросла и почти пропала, а левая — будто только что сделанная, чистая и ухоженная.</h3>
-         <h4 class="choice">Какой же путь ты выберешь?</h4>
+        <div id="frame-2" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 class="text" data-lang-key="r11">Очнувшись, ты чувствуешь лёгкую головную боль. Вдруг замечаешь лес — но не обычный: яркий, неестественного бирюзового цвета. Неуверенно идёшь прямо и видишь развилку. Правая тропа заросла и почти пропала, а левая — будто только что сделанная, чистая и ухоженная.</h3>
+         <h4 class="choice" data-lang-key="r12">Какой же путь ты выберешь?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')">правая тропа</button>
-             <button class="knopka" onclick="makeChoice('intelligence')">левая тропа</button>
+             <button class="knopka" onclick="makeChoice('agility')" data-lang-key="r13">правая тропа</button>
+             <button class="knopka" onclick="makeChoice('intelligence')" data-lang-key="r14">левая тропа</button>
          </div>
         </div>
 
-        <div id="frame-3" class="frame" style="display: none;">
-         <h3 class="text">Идя по выбранному пути, ты чувствуешь тревожность — будто кто-то наблюдает за тобой. Ты слышишь странный шум, похожий на шёпот...</h3>
-         <h4 class="choice">что же вам делать?</h4>
+        <div id="frame-3" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 class="text" data-lang-key="r15">Идя по выбранному пути, ты чувствуешь тревожность — будто кто-то наблюдает за тобой. Ты слышишь странный шум, похожий на шёпот...</h3>
+         <h4 class="choice" data-lang-key="r16">что же вам делать?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('intelligence')">попытаться прислушатся</button>
-             <button class="knopka" onclick="makeChoice('agility')" onclick="makeChoice('vitality')">закрыть уши, и ускорить щаг</button>
+             <button class="knopka" onclick="makeChoice('intelligence')" data-lang-key="r17">попытаться прислушатся</button>
+             <button class="knopka" onclick="makeChoice('agility'); makeChoice('vitality')" data-lang-key="r18">закрыть уши, и ускорить щаг</button>
          </div>
         </div>
 
-        <div id="frame-4" class="frame" style="display: none;">
-         <h3 class="text">Чуть задумавшись, ты едва не падаешь в обрыв — дальше идти некуда...</h3>
-         <h4 class="choice">ваше действие?</h4>
+        <div id="frame-4" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 class="text" data-lang-key="r19">Чуть задумавшись, ты едва не падаешь в обрыв — дальше идти некуда...</h3>
+         <h4 class="choice" data-lang-key="r20">ваше действие?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')">прыгнуть в обрыв</button>
-             <button class="knopka" onclick="makeChoice('intelligence')" onclick="makeChoice('vitality')">посторатся акуратно спустится</button>
+             <button data-lang-key="r21" class="knopka" onclick="document.getElementById('frame-4').style.display='none'; document.getElementById('frame-gameover-2').style.display='block';">прыгнуть в обрыв</button>
+             <button data-lang-key="r22" class="knopka" onclick="makeChoice('intelligence'); makeChoice('vitality')">посторатся акуратно спустится</button>
          </div>
         </div>
 
-        <div id="frame-5" class="frame" style="display: none;">
-         <h3 class="text">После спуска ты продолжил идти и постепенно осознал, что что-то не так. Всё вокруг казалось неживым, а в голове мелькнула мысль: "Неужели я попал в иллюзию?"</h3>
-         <h4 class="choice">как же тебе решить эту проблему?</h4>
+        <div id="frame-5" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r23" class="text">После спуска ты продолжил идти и постепенно осознал, что что-то не так. Всё вокруг казалось неживым, а в голове мелькнула мысль: "Неужели я попал в иллюзию?"</h3>
+         <h4 data-lang-key="r24" class="choice">как же тебе решить эту проблему?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility'); makeChoice('intelligence');">посторатся сосредоточится и вернутся в реальность</button>
-             <button class="knopka" onclick="makeChoice('vitality'); makeChoice('strength');">доверится ощущением и пройти дальше</button>
+             <button data-lang-key="r25" class="knopka" onclick="makeChoice('agility'); makeChoice('intelligence');">посторатся сосредоточится и вернутся в реальность</button>
+             <button data-lang-key="r26" class="knopka" onclick="makeChoice('vitality'); makeChoice('strength');">доверится ощущением и пройти дальше</button>
          </div>
         </div>
 
-        <div id="frame-6" class="frame" style="display: none;">
-         <h3 class="text">Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...</h3>
-         <h4 class="choice">твои действие?</h4>
+        <div id="frame-6" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r27" class="text">Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...</h3>
+         <h4 data-lang-key="r28" class="choice">твои действие?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')">проскочить мимо него</button>
-             <button class="knopka" onclick="makeChoice('intelligence')">подождать пока он не потеряет бдительность и обойти его</button>
+             <button data-lang-key="r29"  class="knopka" onclick="makeChoice('agility')">проскочить мимо него</button>
+             <button data-lang-key="r30" class="knopka" onclick="makeChoice('intelligence')">подождать пока он не потеряет бдительность и обойти его</button>
          </div>
         </div>
 
-        <div id="frame-7" class="frame" style="display: none;">
-         <h3 class="text">Дойдя до замка, ты замечаешь трое врат. На правых — символ кулака, на средних — кроличья лапка, на левых — символ книги...</h3>
-         <h4 class="choice">куда тебе пойти?</h4>
+        <div id="frame-7" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r31" class="text">Дойдя до замка, ты замечаешь трое врат. На правых — символ кулака, на средних — кроличья лапка, на левых — символ книги...</h3>
+         <h4 data-lang-key="r32" class="choice">куда тебе пойти?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('strength'); checkDoor('strength');">в левый, веть, я сильный</button>
-             <button class="knopka" onclick="makeChoice('agility'); checkDoor('agility');">в средний, ловкость, моё всё</button>
-             <button class="knopka" onclick="makeChoice('intelligence'); checkDoor('intelligence');">в правый, магия мне по душе</button>
+             <button data-lang-key="r33" class="knopka" onclick="makeChoice('strength'); checkDoor('strength');">в левый, веть, я сильный</button>
+             <button data-lang-key="r34" class="knopka" onclick="makeChoice('agility'); checkDoor('agility');">в средний, ловкость, моё всё</button>
+             <button data-lang-key="r35" class="knopka" onclick="makeChoice('intelligence'); checkDoor('intelligence');">в правый, магия мне по душе</button>
          </div>
         </div>
 
-        <div id="frame-win" class="frame" style="display:none;">
-            <h3 class="text">поздровляю! ты нашёл свою дверь.</h3>
+        <div id="frame-win" class="frame" style="display:none;" lang="he" dir="rtl">
+            <h3 data-lang-key="r36" class="text">поздровляю! ты нашёл свою дверь.</h3>
         </div>
 
-        <div id="frame-gameover-1" class="frame" style="display:none;">
-            <h3 class="text">Ты проиграл, ты не смог найти свою дверь.</h3>
+        <div id="frame-gameover-1" class="frame" style="display:none;" lang="he" dir="rtl">
+            <h3 data-lang-key="r37" class="text">Ты проиграл, ты не смог найти свою дверь.</h3>
+        </div>
+
+        <div id="frame-gameover-2" class="frame" style="display:none;" lang="he" dir="rtl">
+            <h3 data-lang-key="r39" class="text">Ты проиграл, прыгать? ты что бесмертный, или я чего то не знаю?.</h3>
         </div>
      
      <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
     <script>
+        document.getElementById('lang').addEventListener('click', function() {
+         document.getElementById('rus').style.display = 
+         document.getElementById('rus').style.display === 'none' ? 'block' : 'none';
+         document.getElementById('he').style.display = 
+         document.getElementById('he').style.display === 'none' ? 'block' : 'none';
+        });
+        const translations = {
+            ru: {
+                r1: "Обычный день внезапно прерывается вспышкой света.",
+                r2: "Что это - конец или начало? Сделай свой выбор… и узнай правду.",
+                r3: "Начать",
+                r4: "твой пол?",
+                r5: "парень",
+                r6: "девушка",
+                r7: "Идя домой, вы замечаете яркую вспышку. Вдруг небо наполняется ярким, ослепительным светом. Глядя на это, вам кажется, будто небо сломалось — в нём появилась трещина. Внезапно вы чувствуете, как это нечто начинает вас затягивать.",
+                r8: "Ваше действие?",
+                r9: "Пытаться брыкаться и убежать.",
+                r10: "Попытаться придумать план по безопасному приземлению.",
+                r11: "Очнувшись, ты чувствуешь лёгкую головную боль. Вдруг замечаешь лес — но не обычный: яркий, неестественного бирюзового цвета. Неуверенно идёшь прямо и видишь развилку. Правая тропа заросла и почти пропала, а левая — будто только что сделанная, чистая и ухоженная.",
+                r12: "Какой же путь ты выберешь?",
+                r13: "правая тропа",
+                r14: "левая тропа",
+                r15: "Идя по выбранному пути, ты чувствуешь тревожность — будто кто-то наблюдает за тобой. Ты слышишь странный шум, похожий на шёпот...",
+                r16: "что же вам делать?",
+                r17: "попытаться прислушатся",
+                r18: "закрыть уши, и ускорить щаг",
+                r19: "Чуть задумавшись, ты едва не падаешь в обрыв — дальше идти некуда...",
+                r20: "ваше действие?",
+                r21: "прыгнуть в обрыв",
+                r22: "посторатся акуратно спустится",
+                r23: "После спуска ты продолжил идти и постепенно осознал, что что-то не так. Всё вокруг казалось неживым, а в голове мелькнула мысль: (Неужели я попал в иллюзию?)",
+                r24: "как же тебе решить эту проблему?",
+                r25: "посторатся сосредоточится и вернутся в реальность",
+                r26: "доверится ощущением и пройти дальше",
+                r27: "Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...",
+                r28: "твои действие?",
+                r29: "проскочить мимо него",
+                r30: "подождать пока он не потеряет бдительность и обойти его",
+                r31: "Дойдя до замка, ты замечаешь трое врат. На правых — символ кулака, на средних — кроличья лапка, на левых — символ книги...",
+                r32: "куда тебе пойти?",
+                r33: "в левый, веть, я сильный",
+                r34: "в средний, ловкость, моё всё",
+                r35: "в правый, магия мне по душе",
+                r36: "поздровляю! ты нашёл свою дверь.",
+                r37: "Ты проиграл, ты не смог найти свою дверь.",
+                r38: "язык",
+                r39: "Ты проиграл! прыгать? ты что бесмертный? или я чего то не знаю?."
+            },
+            he: {
+                r1: "יום רגיל נקטע בפתאומיות בהבזק אור.",
+                r2: "האם זה הסוף או ההתחלה? בצע את הבחירה שלך... וגלה את האמת.",
+                r3: "התחל",
+                r4: "מה המין שלך?",
+                r5: "בחור",
+                r6: "בחורה",
+                r7: "בדרך הביתה אתה מבחין בהבזק אור בוהק. לפתע השמים מתמלאים באור מסנוור. כשאתה מביט למעלה, נדמה לך שהשמים נסדקו - מופיעה בהם שבריריות. לפתע אתה מרגיש כוח מושך אותך פנימה.",
+                r8: "מה תעשה?",
+                r9: "לנסות להיאבק ולהימלט.",
+                r10: "לנסות לחשוב על תוכנית לנחיתה בטוחה.",
+                r11: "כשאתה מתעורר, אתה מרגיש כאב ראש קל. לפתע אתה מבחין ביער - אבל לא רגיל: הוא בצבע טורקיז זוהר ולא טבעי. אתה הולך בחוסר ביטחון ומוצא פרשת דרכים. השביל הימני מוזנח וכמעט נעלם, השמאלי - נראה חדש ומטופח.",
+                r12: "איזה שביל תבחר?",
+                r13: "שביל ימין",
+                r14: "שביל שמאל",
+                r15: "כשאתה הולך בשביל שבחרת, אתה חש חרדה - תחושה שמישהו צופה בך. אתה שומע רחש מוזר, כמו לחישה...",
+                r16: "מה תעשה?",
+                r17: "לנסות להקשיב",
+                r18: "לסגור את האוזניים ולהאיץ את הקצב",
+                r19: "לאחר הרהור קצר, אתה כמעט נופל מצוק - אין לאן להמשיך...",
+                r20: "מה תעשה?",
+                r21: "לקפוץ לתהום",
+                r22: "לנסות לרדת בזהירות",
+                r23: "אחרי הירידה אתה ממשיך ללכת ומבין שמשהו לא בסדר. הכל סביב נראה דומם, ומחשבה חולפת בראשך: 'האם אני בתוך אשליה?'",
+                r24: "איך תפתור את הבעיה?",
+                r25: "לנסות להתרכז ולחזור למציאות",
+                r26: "לסמוך על החושים ולהמשיך",
+                r27: "כשאתה מגיע לטירה לא מוכרת, אתה מבחין בשומר - ענק בגובה שלושה מטרים עם חרב...",
+                r28: "מה תעשה?",
+                r29: "להתחמק ממנו",
+                r30: "לחכות שיאבד ערנות ולעקוף",
+                r31: "כשאתה מגיע לטירה, אתה מבחין בשלושה שערים. בימין - סמל אגרוף, במרכז - רגל ארנבת, בשמאל - סמל ספר...",
+                r32: "לאן תלך?",
+                r33: "שמאלה, אני חזק",
+                r34: "אמצע, זריזות זה הכי",
+                r35: "ימין, קסם זה בשבילי",
+                r36: "מזל טוב! מצאת את הדלת שלך.",
+                r37: "הפסדת, לא הצלחת למצוא את הדלת שלך.",
+                r38: "שפה",
+                r39: "הפסדת! לקפוץ? אתה מהיר בן אלמוות או שאני מפספס משהו כאן?..."
+            }
+        }    
+
+        let currentLang = 'ru';
+        function updateTexts() {
+         const elements = document.querySelectorAll('[data-lang-key]');
+         elements.forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+               if (translations[currentLang]?.[key]) {
+                 element.textContent = translations[currentLang][key];
+                  const frame = element.closest('.frame, #tex, #gender-screen');
+                    if (frame) { 
+                      frame.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
+                      frame.setAttribute('lang', currentLang);
+                    }
+                }
+            });
+        }
+
+      document.getElementById('rus').addEventListener('click', () => {
+          currentLang = 'ru';
+          updateTexts();
+          localStorage.setItem('gameLang', 'ru');
+      });
+
+      document.getElementById('he').addEventListener('click', () => {
+          currentLang = 'he';
+          updateTexts();
+          localStorage.setItem('gameLang', 'he');
+      });
+
+        window.addEventListener('DOMContentLoaded', () => {
+         const savedLang = localStorage.getItem('gameLang') || 'ru';
+         currentLang = savedLang;
+         updateTexts();
+        });
+
        window.addEventListener('load', function() {
          document.getElementById('preloader').style.display = 'none';
         });
@@ -405,4 +625,5 @@
     </script>
     </body>
 </html>
-<!-- первая версия 1 --- 1.0 -->
+<!-- 1.1 -->
+<!-- юху, 600 строк, мой первый код со стольким текстом :3 -->
