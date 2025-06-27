@@ -352,12 +352,12 @@
          const name = prompt(`отлично,как тебя звать?`);
 
          if (name) {
-         alert(`отлично, приветствую тебя, ${name}!`);
+             alert(`отлично, приветствую тебя, ${name}!`);
       
              player = {
              name: name,
              gender: gender,
-             stats: {
+                stats: {
                  strength: 0,
                  agility: 0,
                  intelligence: 0,
@@ -366,13 +366,13 @@
              choices: []
             };
       
-             localStorage.setItem('player', JSON.stringify(player));
-             document.getElementById('gender-screen').style.display = 'none';
-             document.getElementById('boy').style.display = 'none';
-             document.getElementById('girl').style.display = 'none';
-             document.body.style.background = 'none';
-             document.getElementById('frame-1').style.display = 'block';
-         } else {
+         localStorage.setItem('player', JSON.stringify(player));
+         document.getElementById('gender-screen').style.display = 'none';
+         document.getElementById('boy').style.display = 'none';
+         document.getElementById('girl').style.display = 'none';
+         document.body.style.background = 'none';
+         document.getElementById('frame-1').style.display = 'block';
+        } else {
              alert("???");
             }
         }
@@ -404,4 +404,4 @@
         
     </script>
     </body>
-</html>
+</html> //первоя версия
