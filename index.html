@@ -372,7 +372,7 @@
 
          <div class="okno">
              <button data-lang-key="r21" class="knopka" onclick="document.getElementById('frame-4').style.display='none'; document.getElementById('frame-gameover-2').style.display='block';">прыгнуть в обрыв</button>
-             <button data-lang-key="r22" class="knopka" onclick="makeChoice('intelligence'); makeChoice('vitality')">посторатся акуратно спустится</button>
+             <button data-lang-key="r22" class="knopka" onclick="makeChoice('intelligence')">посторатся акуратно спустится</button>
          </div>
         </div>
 
@@ -381,8 +381,8 @@
          <h4 data-lang-key="r24" class="choice">как же тебе решить эту проблему?</h4>
 
          <div class="okno">
-             <button data-lang-key="r25" class="knopka" onclick="makeChoice('agility'); makeChoice('intelligence');">посторатся сосредоточится и вернутся в реальность</button>
-             <button data-lang-key="r26" class="knopka" onclick="makeChoice('vitality'); makeChoice('strength');">доверится ощущением и пройти дальше</button>
+             <button data-lang-key="r25" class="knopka" onclick="makeChoice('intelligence')">посторатся сосредоточится и вернутся в реальность</button>
+             <button data-lang-key="r26" class="knopka" onclick="makeChoice('vitality')">доверится ощущением и пройти дальше</button>
          </div>
         </div>
 
@@ -408,15 +408,43 @@
         </div>
 
         <div id="frame-win" class="frame" style="display:none;" lang="he" dir="rtl">
-            <h3 data-lang-key="r36" class="text">поздровляю! ты нашёл свою дверь.</h3>
+         <h3 data-lang-key="r36" class="text">поздровляю! ты нашёл свою дверь.</h3>
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
 
         <div id="frame-gameover-1" class="frame" style="display:none;" lang="he" dir="rtl">
-            <h3 data-lang-key="r37" class="text">Ты проиграл, ты не смог найти свою дверь.</h3>
+         <h3 data-lang-key="r37" class="text">Ты проиграл, ты не смог найти свою дверь.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
 
         <div id="frame-gameover-2" class="frame" style="display:none;" lang="he" dir="rtl">
-            <h3 data-lang-key="r39" class="text">Ты проиграл, прыгать? ты что бесмертный, или я чего то не знаю?.</h3>
+         <h3 data-lang-key="r39" class="text">Ты проиграл, прыгать? ты что бесмертный, или я чего то не знаю?.</h3>
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+        </div>
+
+        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+        </div>
+
+        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+        </div>
+
+        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+        </div>
+
+        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+        </div>
+
+        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
      
      <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
@@ -467,7 +495,8 @@
                 r36: "поздровляю! ты нашёл свою дверь.",
                 r37: "Ты проиграл, ты не смог найти свою дверь.",
                 r38: "язык",
-                r39: "Ты проиграл! прыгать? ты что бесмертный? или я чего то не знаю?."
+                r39: "Ты проиграл! прыгать? ты что, бесмертный? или я чего то не знаю?.",
+                r40: "попробовать снова",
             },
             he: {
                 r1: "יום רגיל נקטע בפתאומיות בהבזק אור.",
@@ -508,7 +537,8 @@
                 r36: "מזל טוב! מצאת את הדלת שלך.",
                 r37: "הפסדת, לא הצלחת למצוא את הדלת שלך.",
                 r38: "שפה",
-                r39: "הפסדת! לקפוץ? אתה מהיר בן אלמוות או שאני מפספס משהו כאן?..."
+                r39: "הפסדת! לקפוץ? אתה מהיר בן אלמוות או שאני מפספס משהו כאן?...",
+                r40: "נסה שוב",
             }
         }    
 
@@ -605,15 +635,16 @@
          localStorage.setItem('player', JSON.stringify(player));
 
          document.getElementById(`frame-${currentFrame}`).style.display = 'none';
-          currentFrame++;
+         let nextFrame = currentFrame + 1;
 
-            if (currentFrame <= 7) {
-             document.getElementById(`frame-${currentFrame}`).style.display='block';
-            }
+         if (nextFrame <= 7) {
+            document.getElementById(`frame-${nextFrame}`).style.display = 'block';
+            currentFrame = nextFrame;
+         }
         }
             
         function checkDoor(stat) {
-            if (player.stats[stat] >= 3) {
+            if (player.stats[stat] >= 4) {
              document.getElementById('frame-7').style.display = 'none';
              document.getElementById('frame-win').style.display = 'block';
             }  else {
@@ -621,7 +652,28 @@
                  document.getElementById('frame-gameover-1').style.display = 'block';
                 }
         }
-        
+
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('restart')) {
+                currentFrame = 1;
+
+                if (player) {
+                    player = {
+                        name: player.name,
+                        gender: player.gender,
+                        stats: { strength: 0, agility: 0, intelligence: 0, vitality: 0 },
+                        choices: []
+                    };
+                    localStorage.setItem('player', JSON.stringify(player));
+                }
+
+                document.querySelectorAll('.frame').forEach(frame => {
+                  frame.style.display = 'none';
+                })
+
+             document.getElementById('frame-1').style.display = 'block';
+            }
+        });
     </script>
     </body>
 </html>
