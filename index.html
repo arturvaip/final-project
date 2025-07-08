@@ -301,7 +301,38 @@
          0% { transform: rotate(0deg); }
          100% { transform: rotate(360deg); }
         }
+
+        .lang-knopka {
+         font-weight: bold; 
+         cursor: pointer;  
+         width: 4vw;
+         height: 3vh;
+         font-size: 0.7vw;
+         background-color: #2997fff1;
+         border-radius: 999px;
+         border: none;
+         margin-bottom: 0.6vw;
+         margin-top: 0.6vh;
+        }
+
+        .lang-knopka:hover {
+         background-color: #195e9ef1;
+        }
         
+        .cont {
+         background: rgb(100, 200, 100);
+         width: 20vw;
+         height: 10vh;
+         bottom: 5vh;
+         margin: 2vw;
+         border-radius: 20px;
+         font-size: 1.4vw;
+         color: white;
+        }
+
+        .cont:hover {
+            background-color: rgb(57, 119, 57);;
+        }
      </style>
     </head>
     <body>
@@ -311,9 +342,9 @@
      </div>
 
      <div class="lang">
+         <button id="rus" style="display: none;" class="lang-knopka"> Русский </button>
+         <button id="he" style="display: none;" class="lang-knopka"> עברית </button>
          <button id="lang" data-lang-key="r38">язык</button>
-         <button id="rus" style="display: none;"> Русский </button>
-         <button id="he" style="display: none;"> עברית </button>
      </div>
 
      <div id="tex"  lang="he" dir="rtl"> 
@@ -352,7 +383,7 @@
 
          <div class="okno">
              <button class="knopka" onclick="makeChoice('agility')" data-lang-key="r13">правая тропа</button>
-             <button class="knopka" onclick="makeChoice('intelligence')" data-lang-key="r14">левая тропа</button>
+             <button class="knopka" onclick="makeChoice('strength')" data-lang-key="r14">левая тропа</button>
          </div>
         </div>
 
@@ -381,7 +412,7 @@
          <h4 data-lang-key="r24" class="choice">как же тебе решить эту проблему?</h4>
 
          <div class="okno">
-             <button data-lang-key="r25" class="knopka" onclick="makeChoice('intelligence')">посторатся сосредоточится и вернутся в реальность</button>
+             <button data-lang-key="r25" class="knopka" onclick="makeChoice('strength')">посторатся сосредоточится и вернутся в реальность</button>
              <button data-lang-key="r26" class="knopka" onclick="makeChoice('vitality')">доверится ощущением и пройти дальше</button>
          </div>
         </div>
@@ -406,7 +437,36 @@
              <button data-lang-key="r35" class="knopka" onclick="makeChoice('intelligence'); checkDoor('intelligence');">в правый, магия мне по душе</button>
          </div>
         </div>
+        <!--выбрана сила-->
+         <div id="frame-8-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key class="text">дверь силы приняла тебя, поздровляю, вдруг ты замечаешь что ты не внутри замка, ты на поляне, и в далике веднеется деревенька.</h3>
+         <h4 data-lang-key class="choice">стоит ли туда идти??</h4>
 
+         <div class="okno">
+             <button data-lang-key class="knopka" onclick="nextFrame(); nextFrame()">пойти в сторону деревни</button>
+             <button data-lang-key class="knopka" onclick="increaseStat('strength'); nextFrame()">обойти деревню</button>
+         </div>
+        </div>
+
+        <div id="frame-9-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key class="text">пытаясь обойти деревню, ты упал в дыру, вроде бы кроме пары царапин нечего серьёзного, но ты замечаешь что то ввиде сундука, открыв его ты видишь меч, с каким то знаком на рукояти, такой было видно на флаге в той деревне</h3>
+         <h4 data-lang-key class="choice">выбравшишь, ты решаешь пойти в ту самую деревню</h4>
+
+         <div class="okno">
+             <button data-lang-key class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-10-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
+         <h4 data-lang-key class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="nextFrame()" data-lang-key="r41">продолжить</button>
+         </div>
+        </div>
+        
+        <!--конец силы-->
         <div id="frame-win" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r36" class="text">поздровляю! ты нашёл свою дверь.</h3>
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
@@ -422,27 +482,12 @@
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
 
-        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+        <div id="frame-gameover-3" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
 
-        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
-         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
-        </div>
-
-        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
-         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
-        </div>
-
-        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
-         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
-        </div>
-
-        <div id="frame-gameover-№" class="frame" style="display:none;" lang="he" dir="rtl">
+        <div id="frame-gameover-4" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
@@ -497,6 +542,7 @@
                 r38: "язык",
                 r39: "Ты проиграл! прыгать? ты что, бесмертный? или я чего то не знаю?.",
                 r40: "попробовать снова",
+                r41: "продолжить",
             },
             he: {
                 r1: "יום רגיל נקטע בפתאומיות בהבזק אור.",
@@ -539,6 +585,7 @@
                 r38: "שפה",
                 r39: "הפסדת! לקפוץ? אתה מהיר בן אלמוות או שאני מפספס משהו כאן?...",
                 r40: "נסה שוב",
+                r41: "המשך",
             }
         }    
 
@@ -643,14 +690,35 @@
          }
         }
             
+        let currentPath = null;
+
         function checkDoor(stat) {
-            if (player.stats[stat] >= 4) {
-             document.getElementById('frame-7').style.display = 'none';
-             document.getElementById('frame-win').style.display = 'block';
-            }  else {
-                 document.getElementById('frame-7').style.display = 'none';
-                 document.getElementById('frame-gameover-1').style.display = 'block';
-                }
+         currentPath = stat;
+         document.getElementById('frame-7').style.display = 'none';
+         showNextFrameInPath();
+        }
+
+        function showNextFrameInPath() {
+            const visibleFrame = document.querySelector(`.${currentPath}-div[style*="block"]`);
+            const allframe = Array.from(document.querySelectorAll(`.${currentPath}-div`));
+
+            let nextFrame
+            if (!visibleFrame) {
+                nextFrame = allframe[0];
+            } else {
+                const currentIndex = allframe.index(visibleFrame);
+                nextFrame = allframe[currentIndex + 1];
+            }
+
+            if (nextFrame) {
+                nextFrame.style.display = 'block';
+            }
+        }
+
+        function nextFrame() {
+            const currentFrame = document.querySelector(`.${currentPath}-div[style*="block"]`);
+            if (currentFrame) currentFrame.style.display = 'none';
+            showNextFrameInPath();
         }
 
         document.addEventListener('click', function(e) {
@@ -674,8 +742,17 @@
              document.getElementById('frame-1').style.display = 'block';
             }
         });
+
+        function increaseStat(stat) {
+         if (player && player.stats[stat] !== undefined) {
+             player.stats[stat]++;
+             localStorage.setItem('player', JSON.stringify(player));
+        }    else {
+             console.warn("Игрок не найден или неправильный параметр: " + stat);
+            }
+}
     </script>
     </body>
 </html>
-<!-- 1.1 -->
-<!-- юху, 600 строк, мой первый код со стольким текстом :3 -->
+<!-- 1.2 -->
+<!-- юху, 700 строк, мой первый код со стольким текстом :3 -->
