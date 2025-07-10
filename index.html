@@ -439,25 +439,72 @@
         </div>
         <!--выбрана сила-->
          <div id="frame-8-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key class="text">дверь силы приняла тебя, поздровляю, вдруг ты замечаешь что ты не внутри замка, ты на поляне, и в далике веднеется деревенька.</h3>
-         <h4 data-lang-key class="choice">стоит ли туда идти??</h4>
+         <h3 data-lang-key="r42" class="text">Дверь силы приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, и вдалеке виднеется деревенька.</h3>
+         <h4 data-lang-key="r43" class="choice">Стоит ли туда идти?</h4>
 
          <div class="okno">
-             <button data-lang-key class="knopka" onclick="nextFrame(); nextFrame()">пойти в сторону деревни</button>
-             <button data-lang-key class="knopka" onclick="increaseStat('strength'); nextFrame()">обойти деревню</button>
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">Пойти в сторону деревни</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">Обойти деревню</button>
          </div>
         </div>
 
         <div id="frame-9-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key class="text">пытаясь обойти деревню, ты упал в дыру, вроде бы кроме пары царапин нечего серьёзного, но ты замечаешь что то ввиде сундука, открыв его ты видишь меч, с каким то знаком на рукояти, такой было видно на флаге в той деревне</h3>
-         <h4 data-lang-key class="choice">выбравшишь, ты решаешь пойти в ту самую деревню</h4>
+         <h3 data-lang-key="r46" class="text">Пытаясь обойти деревню, ты упал в яму. Вроде бы, кроме пары царапин, ничего серьёзного. Но ты замечаешь что-то вроде сундука. Открыв его, ты видишь меч с каким-то знаком на рукояти — такой был виден на флаге в той деревне.</h3>
+         <h4 data-lang-key="r47" class="choice">Выбравшись, ты решаешь всё-таки пойти в ту самую деревню.</h4>
 
          <div class="okno">
-             <button data-lang-key class="knopka" onclick="nextFrame()">продолжить</button>
+             <button data-lang-key="r41" class="knopka" onclick="player.foundSword = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame();">продолжить</button>
          </div>
         </div>
 
         <div id="frame-10-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r48" class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
+         <h4 data-lang-key="r49" class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="nextFrame()" data-lang-key="r41">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-11-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r50" class="text">идя по лесу, в далике ты видишь дом, в нём же, через окно ты видишь человека, сидящим за столом.</h3>
+         <h4 data-lang-key="r51" class="choice">как же вам поступить?</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="nextFrame()" data-lang-key="r52">выбить дверь ногой</button>
+         <button class="knopka" onclick="showSageFrame()" data-lang-key="r53">спокойно постучать</button>
+         </div>
+        </div>
+
+        <div id="frame-12-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r54" class="text">Ты с разбега выбил дверь. Мудрец резко вскочил с места, его лицо исказилось от гнева. "Ты ещё не готов познать силу, если идёшь по пути разрушения," — сказал он, и дом исчез в яркой вспышке света.</h3>
+         <h4 data-lang-key="r55" class="choice">не думаю что у тебя есть выбор что делать...</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="document.getElementById('frame-12-strength').style.display='none'; document.getElementById('frame-gameover-3').style.display='block';" data-lang-key="r60">конец?</button>
+         </div>
+        </div>
+
+        <div id="frame-13-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r56" class="text" id="mech">Ты спокойно постучал в дверь. Через несколько секунд она приоткрылась, и из дома вышел седой мудрец. Он внимательно осмотрел тебя и сказал: "Ты несёшь на себе знак древней силы. Заходи, расскажу тебе больше.</h3>
+         <h4 data-lang-key="r57" class="choice">что же ты будешь делать?</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="nextFrame(); nextFrame();" data-lang-key="r58">Зайти внутрь.</button>
+         <button class="knopka" onclick="nextFrame(); increaseStat('agility');" data-lang-key="r59">Сказать, что сначала осмотришься вокруг.</button>
+         </div>
+        </div>
+
+        <div id="frame-14-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
+         <h4 data-lang-key class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
+
+         <div class="okno">
+         <button class="knopka" onclick="nextFrame()" data-lang-key="r41">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-15-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
          <h3 data-lang-key class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
          <h4 data-lang-key class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
 
@@ -483,12 +530,7 @@
         </div>
 
         <div id="frame-gameover-3" class="frame" style="display:none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
-         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
-        </div>
-
-        <div id="frame-gameover-4" class="frame" style="display:none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r37" class="text">Ты проиграл.</h3> 
+         <h3 data-lang-key="r61" class="text">после пропажи мудреца, тебя ждали вечные странствие без ответов на свои вопросы.</h3> 
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
      
@@ -543,49 +585,89 @@
                 r39: "Ты проиграл! прыгать? ты что, бесмертный? или я чего то не знаю?.",
                 r40: "попробовать снова",
                 r41: "продолжить",
+                r42: "Дверь силы приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, и вдалеке виднеется деревенька.",
+                r43: "Стоит ли туда идти?",
+                r44: "Пойти в сторону деревни",
+                r45: "Обойти деревню",
+                r46: "Пытаясь обойти деревню, ты упал в яму. Вроде бы, кроме пары царапин, ничего серьёзного. Но ты замечаешь что-то вроде сундука. Открыв его, ты видишь меч с каким-то знаком на рукояти — такой был виден на флаге в той деревне.",
+                r47: "Выбравшись, ты решаешь всё-таки пойти в ту самую деревню.",
+                r48: "Дойдя до деревни, ты замечаешь обычных людей. Начав расспрашивать их о мире, символе на мече и обо всём остальном, тебе удаётся узнать немного.",
+                r49: "Люди сказали, что лучше обратиться к мудрецу за той частью Сумеречного леса.",
+                r50: "Идя по лесу, вдалеке ты видишь дом. Через окно видно человека, сидящего за столом.",
+                r51: "Как же тебе поступить?",
+                r52: "Выбить дверь ногой",
+                r53: "Спокойно постучать",
+                r54: "Ты с разбега выбил дверь. Мудрец резко вскочил с места, его лицо исказилось от гнева. «Ты ещё не готов познать силу, если идёшь по пути разрушения», — сказал он, и дом исчез в яркой вспышке света.",
+                r55: "Не думаю, что у тебя есть выбор, что делать...",
+                r56: "Ты спокойно постучал в дверь. Через несколько секунд она приоткрылась, и из дома вышел седой мудрец. Он внимательно осмотрел тебя и сказал: «Ты несёшь на себе знак древней силы. Заходи, расскажу тебе больше».",
+                r57: "Что же ты будешь делать?",
+                r58: "Зайти внутрь.",
+                r59: "Сказать, что сначала осмотришься вокруг.",
+                r60: "Конец?",
+                r61: "После пропажи мудреца, тебя ждали вечные странствия без ответов на свои вопросы.",
             },
             he: {
-                r1: "יום רגיל נקטע בפתאומיות בהבזק אור.",
-                r2: "האם זה הסוף או ההתחלה? בצע את הבחירה שלך... וגלה את האמת.",
-                r3: "התחל",
-                r4: "מה המין שלך?",
-                r5: "בחור",
-                r6: "בחורה",
-                r7: "בדרך הביתה אתה מבחין בהבזק אור בוהק. לפתע השמים מתמלאים באור מסנוור. כשאתה מביט למעלה, נדמה לך שהשמים נסדקו - מופיעה בהם שבריריות. לפתע אתה מרגיש כוח מושך אותך פנימה.",
-                r8: "מה תעשה?",
-                r9: "לנסות להיאבק ולהימלט.",
-                r10: "לנסות לחשוב על תוכנית לנחיתה בטוחה.",
-                r11: "כשאתה מתעורר, אתה מרגיש כאב ראש קל. לפתע אתה מבחין ביער - אבל לא רגיל: הוא בצבע טורקיז זוהר ולא טבעי. אתה הולך בחוסר ביטחון ומוצא פרשת דרכים. השביל הימני מוזנח וכמעט נעלם, השמאלי - נראה חדש ומטופח.",
-                r12: "איזה שביל תבחר?",
-                r13: "שביל ימין",
-                r14: "שביל שמאל",
-                r15: "כשאתה הולך בשביל שבחרת, אתה חש חרדה - תחושה שמישהו צופה בך. אתה שומע רחש מוזר, כמו לחישה...",
-                r16: "מה תעשה?",
-                r17: "לנסות להקשיב",
-                r18: "לסגור את האוזניים ולהאיץ את הקצב",
-                r19: "לאחר הרהור קצר, אתה כמעט נופל מצוק - אין לאן להמשיך...",
-                r20: "מה תעשה?",
-                r21: "לקפוץ לתהום",
-                r22: "לנסות לרדת בזהירות",
-                r23: "אחרי הירידה אתה ממשיך ללכת ומבין שמשהו לא בסדר. הכל סביב נראה דומם, ומחשבה חולפת בראשך: 'האם אני בתוך אשליה?'",
-                r24: "איך תפתור את הבעיה?",
-                r25: "לנסות להתרכז ולחזור למציאות",
-                r26: "לסמוך על החושים ולהמשיך",
-                r27: "כשאתה מגיע לטירה לא מוכרת, אתה מבחין בשומר - ענק בגובה שלושה מטרים עם חרב...",
-                r28: "מה תעשה?",
-                r29: "להתחמק ממנו",
-                r30: "לחכות שיאבד ערנות ולעקוף",
-                r31: "כשאתה מגיע לטירה, אתה מבחין בשלושה שערים. בימין - סמל אגרוף, במרכז - רגל ארנבת, בשמאל - סמל ספר...",
-                r32: "לאן תלך?",
-                r33: "שמאלה, אני חזק",
-                r34: "אמצע, זריזות זה הכי",
-                r35: "ימין, קסם זה בשבילי",
-                r36: "מזל טוב! מצאת את הדלת שלך.",
-                r37: "הפסדת, לא הצלחת למצוא את הדלת שלך.",
-                r38: "שפה",
-                r39: "הפסדת! לקפוץ? אתה מהיר בן אלמוות או שאני מפספס משהו כאן?...",
-                r40: "נסה שוב",
-                r41: "המשך",
+             r1: "יום שגרתי נקטע באור מסמא, מסתורי — כאילו השמים נקרעו לרווחה.",
+             r2: "זה הסוף... או התחלה? תבחר ותגלה את האמת.",
+             r3: "התחל",
+             r4: "מי אתה, נווד בעולם הזה או גיבור שנבחר?",
+             r5: "בחור",
+             r6: "בחורה",
+             r7: "בדרך הביתה, האור מסנוור כל כך עד שאתה מרגיש כיצד החלל סביבך מתעוות. השמים נבקעים — ואתה נשאב אל תוך הלא נודע.",
+             r8: "מה תעשה?",
+             r9: "לנסות לברוח",
+             r10: "לחשוב איך לנחות בבטחה",
+             r11: "אתה מתעורר עם כאב ראש מצמית. היער סביבך זוהר בצבעים לא טבעיים — טורקיז, סגול, כאילו אתה בתוך חלום. לפני שתי דרכים: ימין — שביל עתיק ומכוסה בשורשים, שמאל — מסלול חלק מדי, כממתין לך.",
+             r12: "לאן תלך?",
+             r13: "ימינה",
+             r14: "שמאלה",
+             r15: "משהו זז בין העצים, עוקב אחריך. לחישות רפאים ממלאות את האוויר — מילים לא מובנות, אך מלאות איום.",
+             r16: "מה תעשה?",
+             r17: "להקשיב",
+             r18: "לסתום את האוזניים ולהאיץ",
+             r19: "כמעט נפלת לצוק... אין לאן להמשיך",
+             r20: "מה עכשיו?",
+             r21: "לקפוץ",
+             r22: "לרדת בזהירות",
+             r23: "העולם סביבך מרגיש... לא אמיתי. הצבעים זזים, הצללים מתעוותים. האם זו אשליה? או שמא אתה מאבד את שפיותך?",
+             r24: "איך תצא מזה?",
+             r25: "להתרכז ולחזור למציאות",
+             r26: "לסמוך על התחושה ולהמשיך",
+             r27: "מולך טירה אפלה, ושומר ענק חוסם את הדלת. עיניו בוערות באדום, והוא נראה מוכן לרמוס כל מי שיתקרב.",
+             r28: "איך תעבור?",
+             r29: "לרוץ לידו",
+             r30: "לחכות ולהתחמק",
+             r31: "שלוש דלתות עומדות בפניך, כל אחת עם סמל מוזר: אגרוף (כוח), רגל ארנבת (זריזות), ספר (חוכמה). הבחירה שלך תקבע את גורלך.",
+             r32: "איזו תבחר?",
+             r33: "שמאלה — אני חזק",
+             r34: "אמצע — זריזות בשבילי",
+             r35: "ימין — קסם זה העולם שלי",
+             r36: "מזל טוב, מצאת את הדלת שלך",
+             r37: "נכשלת. הדלת לא נפתחה עבורך",
+             r38: "שפה",
+             r39: "נכשלת! לקפוץ? אתה בן-אלמוות?...",
+             r40: "נסה שוב",
+             r41: "המשך",
+             r42: "דלת הכוח נפתחת. אתה נמצא בשדה פתוח. רחוק — כפר קטן",
+             r43: "ללכת לשם?",
+             r44: "לגשת לכפר",
+             r45: "לעקוף",
+             r46: "נפלת לבור אפל, אך בתוכו מונחת חרב עתיקה עם סמל מוכר — אותו הסמל שראית בכפר. האם זה צירוף מקרים? או גורל?",
+             r47: "החלטת ללכת לשם בכל מקרה",
+             r48: "הכפר מלא באנשים רגילים. הצלחת לגלות קצת מידע",
+             r49: "הם הציעו לפגוש את החכם ביער הדמדומים",
+             r50: "אתה רואה בית מרחוק. מבעד לחלון — איש ליד שולחן",
+             r51: "מה תעשה?",
+             r52: "לפרוץ את הדלת",
+             r53: "לדפוק",
+             r54: "החכם מסתובב לעברך, עיניו מלאות זעם. 'אתה לא ראוי לכוח,' הוא לוחש — וברגע, הבית כולו מתפוגג באוויר.",
+             r55: "אין לך ברירה",
+             r56: "הדלת נפתחת לאט. החכם מביט בך, ואז מבחין בסמל על החרב. 'אז זה אתה,' הוא אומר בקול רועד. 'היכנס, נווד הגורל.'",
+             r57: "מה תעשה עכשיו?",
+             r58: "להיכנס",
+             r59: "קודם לבדוק את הסביבה",
+             r60: "הסוף?",
+             r61: "החכם נעלם. נותרת במסע אין-סופי בלי תשובות",
             }
         }    
 
@@ -648,30 +730,49 @@
          const genderText = (gender === 'male') ? 'парень' : 'девушка';
          const name = prompt(`отлично,как тебя звать?`);
 
-         if (name) {
+           if (name) {
              alert(`отлично, приветствую тебя, ${name}!`);
       
-             player = {
-             name: name,
-             gender: gender,
-                stats: {
+                player = {
+                 name: name,
+                 gender: gender,
+                 stats: {
                  strength: 0,
                  agility: 0,
                  intelligence: 0,
                  vitality: 0
-                },
-             choices: []
-            };
+                 },
+                 choices: [],
+                 foundSword: false
+                };
       
-         localStorage.setItem('player', JSON.stringify(player));
-         document.getElementById('gender-screen').style.display = 'none';
-         document.getElementById('boy').style.display = 'none';
-         document.getElementById('girl').style.display = 'none';
-         document.body.style.background = 'none';
-         document.getElementById('frame-1').style.display = 'block';
-        } else {
+             localStorage.setItem('player', JSON.stringify(player));
+             document.getElementById('gender-screen').style.display = 'none';
+             document.getElementById('boy').style.display = 'none';
+             document.getElementById('girl').style.display = 'none';
+             document.body.style.background = 'none';
+             document.getElementById('frame-1').style.display = 'block';
+            } else {
              alert("???");
             }
+        }
+
+        function showSageFrame() {  
+         const sageText = document.getElementById('mech');
+         const player = JSON.parse(localStorage.getItem('player')) || { foundSword: false };
+  
+           if (player.foundSword) {
+             sageText.textContent = currentLang === 'ru' 
+             ? "Мудрец видит меч и улыбается: 'Этот артефакт избрал тебя... Заходи.'"
+             : "החכם רואה את החרב ומחייך. 'זה לא מקרי שזה הגיע לידיך... היכנס.'";
+            } else {
+             sageText.textContent = currentLang === 'ru'
+             ? "Мудрец осматривает тебя: 'Ты потерял что-то важное... Но всё же заходи.'"
+             : "החכם בוחן אותך. 'איבדת משהו חשוב... אבל עדיין, היכנס.'";
+            }
+
+         document.getElementById('frame-13-strength').style.display = 'block';
+         document.getElementById('frame-11-strength').style.display = "none";
         }
 
         function makeChoice(stat) {
@@ -698,27 +799,28 @@
          showNextFrameInPath();
         }
 
-        function showNextFrameInPath() {
-            const visibleFrame = document.querySelector(`.${currentPath}-div[style*="block"]`);
-            const allframe = Array.from(document.querySelectorAll(`.${currentPath}-div`));
-
-            let nextFrame
-            if (!visibleFrame) {
-                nextFrame = allframe[0];
-            } else {
-                const currentIndex = allframe.index(visibleFrame);
-                nextFrame = allframe[currentIndex + 1];
-            }
-
-            if (nextFrame) {
-                nextFrame.style.display = 'block';
-            }
+        function checkDoor(stat) {
+         currentPath = stat;
+         document.getElementById('frame-7').style.display = 'none';
+         document.getElementById(`frame-8-${stat}`).style.display = 'block';
         }
 
         function nextFrame() {
-            const currentFrame = document.querySelector(`.${currentPath}-div[style*="block"]`);
-            if (currentFrame) currentFrame.style.display = 'none';
-            showNextFrameInPath();
+         const currentFrameElement = document.querySelector(`.${currentPath}-div[style*="block"]`);
+         if (!currentFrameElement) return;
+
+         const currentFrameNumber = parseInt(currentFrameElement.id.split('-')[1]);
+    
+         currentFrameElement.style.display = 'none';
+
+         const nextFrameNumber = currentFrameNumber + 1;
+         const nextFrameElement = document.getElementById(`frame-${nextFrameNumber}-${currentPath}`);
+    
+            if (nextFrameElement) {
+             nextFrameElement.style.display = 'block';
+            } else {
+                document.getElementById('frame-win').style.display = 'block';
+            }
         }
 
         document.addEventListener('click', function(e) {
@@ -754,5 +856,5 @@
     </script>
     </body>
 </html>
-<!-- 1.2 -->
-<!-- юху, 700 строк, мой первый код со стольким текстом :3 -->
+<!-- 1.3 -->
+<!-- ура, 800 строк, не думал что этот проект столько строк займёт фух -->
