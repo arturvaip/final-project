@@ -496,8 +496,8 @@
         </div>
 
         <div id="frame-14-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
-         <h4 data-lang-key class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
+         <h3 data-lang-key class="text">вокруг нет нечего особенного, кроме кулона который валялся под кустами</h3>
+         <h4 data-lang-key class="choice">не чуствуя особого доверия к мудрецу, вы решаете сохранить в тайне находку</h4>
 
          <div class="okno">
          <button class="knopka" onclick="nextFrame()" data-lang-key="r41">продолжить</button>
@@ -505,19 +505,94 @@
         </div>
 
         <div id="frame-15-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key class="text">дойдя до деревни, ты замечаешь людей, самых обычних, начав распрашивать людей о этом мире, символе на мече, и обо всём остольном тебе удаётся узнать немного.</h3>
-         <h4 data-lang-key class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
+         <h3 data-lang-key class="text">зайдя в дом, он оказывается намного больше внутри чем снаружи, мебель тут не самая новая, будто из древности, но при этом как новое, дом выглядил очень уютным на удивление</h3>
+         <h4 data-lang-key class="choice">посмотрев на мудреца, увидел что он сидит за столом и жестом приглашил сесть к нему</h4>
 
          <div class="okno">
-         <button class="knopka" onclick="nextFrame()" data-lang-key="r41">продолжить</button>
+         <button class="knopka" onclick="document.getElementById('frame-win-2').style.display='block'; document.getElementById('frame-15-strength').style.display='none';" data-lang-key="r41">продолжить</button>
          </div>
         </div>
-        
         <!--конец силы-->
-        <div id="frame-win" class="frame" style="display:none;" lang="he" dir="rtl">
+        <!--начало ловкости-->
+        <div id="frame-8-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+
+         <div class="okno">
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+         </div>
+        </div>
+
+        <div id="frame-9-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+
+         <div class="okno">
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+         </div>
+        </div>
+
+        <div id="frame-10-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+
+         <div class="okno">
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+         </div>
+        </div>
+
+        <div id="frame-11-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+
+         <div class="okno">
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+         </div>
+        </div>
+
+        <div id="frame-12-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+
+         <div class="okno">
+             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+         </div>
+        </div>
+
+        <!--конец ловкости-->
+        <!--начало ума\магий-->
+        <!--конец ума\магий-->
+        <div id="frame-win" class="frame" style="display: none;" lang="he" dir="rtl">
          <h3 data-lang-key="r36" class="text">поздровляю! ты нашёл свою дверь.</h3>
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
         </div>
+
+        <div id="frame-win-2" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r36" class="text">поздровляю! это первая концовка, на этом сюжет обрывается, для продолжение заплатите 19.99$</h3>
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+         <button class="knopka" data-lang-key="">титры</button>
+        </div>
+
+        <div id="titri" class="frame" style="display: none;" lang="he" dir="rtl">
+         <h3>ваше путешествие подошло к концу</h3>
+         <p><strong>имя</strong></p>
+         <p><strong>класс</strong></p>
+         <h3>ваши характеристики</h3>
+            <ul>
+             <li>Сила: <span id="credits-strength">0</span></li>
+             <li>Ловкость: <span id="credits-agility">0</span></li>
+             <li>Интеллект: <span id="credits-intelligence">0</span></li>
+            </ul>
+          <h3>достижение</h3>  
+          <p id="credits-sword">❌ Меч не найден</p>
+         <button class="knopka restart" data-lang-key="r40">попробувать снова</button>
+        </div>
+
 
         <div id="frame-gameover-1" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r37" class="text">Ты проиграл, ты не смог найти свою дверь.</h3> 
@@ -846,15 +921,40 @@
         });
 
         function increaseStat(stat) {
-         if (player && player.stats[stat] !== undefined) {
+            if (player && player.stats[stat] !== undefined) {
              player.stats[stat]++;
              localStorage.setItem('player', JSON.stringify(player));
-        }    else {
+            } else {
              console.warn("Игрок не найден или неправильный параметр: " + stat);
             }
-}
+       }
+
+        function show_titri() {
+          document.querySelector('.frame[style*="block"]').style.display = 'none';
+          const player = JSON.parse(localStorage.getItem('player')) || {};
+          document.getElementById('credits-name').textContent = player.name || 'Неизвестный';
+          document.getElementById('credits-gender').textContent = 
+            player.gender === 'male' ? 'Мужской' : (player.gender === 'female' ? 'Женский' : '-');
+
+          if (player.stats) {
+            document.getElementById('credits-strength').textContent = player.stats.strength;
+            document.getElementById('credits-agility').textContent = player.stats.agility;
+            document.getElementById('credits-intelligence').textContent = player.stats.intelligence;
+          }
+
+          const swordText = player.foundSword 
+            ? '✅ Найден древний меч' 
+            : '❌ Меч не найден';
+          document.getElementById('credits-sword').textContent = 
+            currentLang === 'ru' ? swordText : (player.foundSword ? '✅ חרב עתיקה נמצאה' : '❌ חרב לא נמצאה');
+
+          document.getElementById('stats-fin').style.display = 'block';
+
+          document.getElementById('stats-title').textContent = 
+            currentLang === 'ru' ? 'Титры' : 'כתוביות';
+        }
     </script>
     </body>
 </html>
 <!-- 1.3 -->
-<!-- ура, 800 строк, не думал что этот проект столько строк займёт фух -->
+<!-- юху, 900 строк, я так скоро и до 1к дойду, увидим что из этого выйдет -->
