@@ -201,7 +201,7 @@
             margin: 0;
         }
         #frame-2 { 
-            background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.png); 
+            background-image: url(https://cdn.pixabay.com/photo/2024/09/09/11/09/fall-9034528_1280.jpg); 
             width: 100vw;
             height: 100vh;
             background-size: cover;
@@ -210,7 +210,7 @@
             margin: 0;
         }
         #frame-3 { 
-            background-image: url(https://vsthemes.org/uploads/posts/2024-05/les.png); 
+            background-image: url(https://cdn.pixabay.com/photo/2024/09/09/11/09/fall-9034528_1280.jpg); 
             width: 100vw;
             height: 100vh;
             background-size: cover;
@@ -221,14 +221,14 @@
         #frame-4 { 
             width: 100vw;
             height: 100vh;
-            background-image: url(https://cdn.pixabay.com/photo/2020/11/19/19/59/mountain-5759680_1280.jpg); 
+            background-image: url(https://cdn.pixabay.com/photo/2024/03/02/12/02/ai-generated-8608464_1280.jpg); 
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             margin: 0;
         }
         #frame-5 { 
-            background-image: url(https://99px.ru/sstorage/53/2018/05/tmb_227726_611478.jpg); 
+            background-image: url(https://cdn.pixabay.com/photo/2023/02/01/08/01/fairytale-forest-7759927_1280.jpg); 
             width: 100vw;
             height: 100vh;
             background-size: cover;
@@ -237,7 +237,7 @@
             margin: 0;
         }
         #frame-6 { 
-            background-image: url(https://pibig.info/uploads/posts/2022-11/1669229974_6-pibig-info-p-angel-v-dospekhakh-krasivo-7.jpg); 
+            background-image: url('../assets/images/castle_gate.png.png');
             width: 100vw;
             height: 100vh;
             background-size: cover;
@@ -434,7 +434,7 @@
         </div>
 
         <div id="frame-6" class="frame" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r27" class="text">Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...</h3>
+         <h3 data-lang-key="r27" class="text">Пройдя чуть дальше вы в далике видите замок, большой, красивый, но вы замечаете стража — примерно три метра в высоту великана с мечом...</h3>
          <h4 data-lang-key="r28" class="choice">твои действие?</h4>
 
          <div class="okno">
@@ -671,7 +671,7 @@
              r24: "как же тебе решить эту проблему?",
              r25: "посторатся сосредоточится и вернутся в реальность",
              r26: "доверится ощущением и пройти дальше",
-             r27: "Дойдя до незнакомого замка, ты замечаешь стража — почти трёхметрового великана с мечом...",
+             r27: "Пройдя чуть дальше вы в далике видите замок, большой, красивый, но вы замечаете стража — примерно три метра в высоту великана с мечом...",
              r28: "твои действие?",
              r29: "проскочить мимо него",
              r30: "подождать пока он не потеряет бдительность и обойти его",
@@ -765,7 +765,7 @@
              r24: "איך תצא מזה?",
              r25: "להתרכז ולחזור למציאות",
              r26: "לסמוך על התחושה ולהמשיך",
-             r27: "מולך טירה אפלה, ושומר ענק חוסם את הדלת. עיניו בוערות באדום, והוא נראה מוכן לרמוס כל מי שיתקרב.",
+             r27: "המשך ללכת, ובמרחק אתה מבחין בטירה גדולה ויפהפייה... אבל אז אתה מבחין בשומר - ענק בגובה שלושה מטרים, אוחז בחרב עצומה.",
              r28: "איך תעבור?",
              r29: "לרוץ לידו",
              r30: "לחכות ולהתחמק",
@@ -1010,6 +1010,7 @@
 
                 document.querySelectorAll('.frame').forEach(frame => {
                   frame.style.display = 'none';
+                  document.getElementById('titri').style.display = 'none';
                 })
 
              document.getElementById('frame-1').style.display = 'block';
