@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ВАШ_ID"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-HD04WF6XB5');
+     </script>
      <style>
 
         body, html {
@@ -471,7 +478,7 @@
          <h4 data-lang-key="r49" class="choice">люди сказали что лучше обратится к мудрецу за той частью сумеречного леса</h4>
 
          <div class="okno">
-         <button class="knopka" onclick="player.visitedVillage = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame()" data-lang-key="r41">продолжить</button>
+         <button class="knopka" onclick="player.visitedVillage2 = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame()" data-lang-key="r41">продолжить</button>
          </div>
         </div>
 
@@ -586,7 +593,7 @@
         <div id="frame-win-2" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r62" class="text">поздровляю! это первая концовка, на этом сюжет обрывается, для продолжение заплатите 19.99$</h3>
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
-         <button class="knopka" data-lang-key="r63" onclick="show_titri()">титры</button>
+         <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
         </div>
 
         <div id="titri" style="display: none;" lang="he" dir="rtl">
@@ -599,10 +606,10 @@
                 <p><span data-lang-key="r85">Интеллект </span><span id="stat-intelligence">0</span></p>
                 <p><span data-lang-key="r86">Живучесть </span><span id="stat-vitality">0</span></p>
                 <p><strong data-lang-key="r87">Достижения</strong></p>
-                <p><span data-lang-key="r88">Найден меч</span> <span class="plus-mark-sword"></span></p>
-                <p><span data-lang-key="r89">Кулон найден</span> <span class="plus-mark-kulon"></span></p>
-                <p><span data-lang-key="r90">Встретил мудреца</span> <span class="plus-mark-mage"></span></p>
-                <p><span data-lang-key="r91">Был в деревне</strong> <span class="plus-mark-village"></span></p>
+                <p><span data-lang-key="r92">Был в деревне</span> <span id="plus-mark-village2"></span></p>
+                <p><span data-lang-key="r88">Найден меч</span> <span id="plus-mark-sword"></span></p>
+                <p><span data-lang-key="r89">Кулон найден</span> <span id="plus-mark-kulon"></span></p>
+                <p><span data-lang-key="r90">Встретил мудреца</span> <span id="plus-mark-mage"></span></p>
             </div>
          <button class="knopka restart" data-lang-key="r40">попробувать снова</button>
         </div>
@@ -729,7 +736,7 @@
              r89: "Кулон найден",  
              r90: "Встретил мудреца",  
              r91: "Был в деревне",  
-             r92: "имя игрока"
+             r92: "имя игрока",
             },
             he: { 
              r1: "יום שגרתי נקטע באור מסמא, מסתורי — כאילו השמים נקרעו לרווחה.",
@@ -831,6 +838,7 @@
         function updateTexts() {
          const elements = document.querySelectorAll('[data-lang-key]');
          elements.forEach(element => {
+         if(!element) return;
             if (element.className.includes('plus-mark')) return;
             const key = element.getAttribute('data-lang-key');
             
@@ -869,6 +877,8 @@
 
         let player = null;
         let currentFrame = 1;
+        const savedPlayer = localStorage.getItem('player');
+        player = savedPlayer ? JSON.parse(savedPlayer) : {};
 
         document.getElementById('startButton').addEventListener('click', function() {
          this.style.display = 'none';
@@ -991,8 +1001,8 @@
                         choices: [],
                         foundSword: false,
                         metSage: false,
-                        visitedVillage: false,
                         kulon: false,
+                        visitedVillage2: false,
                         achievements: [],
                     };
                     localStorage.setItem('player', JSON.stringify(player));
@@ -1015,6 +1025,11 @@
             }
         }
         function show_titri() {
+         const titriElement = document.getElementById("titri");
+            if(!titriElement) {
+             console.error("Элемент #titri не найден");
+             return;
+            }
          const raw = localStorage.getItem('player');
          const saved = raw ? JSON.parse(raw) : {};
 
@@ -1030,7 +1045,7 @@
              foundSword: Boolean(saved.foundSword),
              kulon: Boolean(saved.kulon),
              metSage: Boolean(saved.metSage),
-             visitedVillage: Boolean(saved.visitedVillage),
+             visitedVillage2: Boolean(saved.visitedVillage2),
             };
 
          document.getElementById("credits-name").textContent = playerData.name;
@@ -1046,10 +1061,11 @@
       
          document.querySelectorAll(".plus-mark").forEach(el => el.textContent = "");
 
-         document.querySelector(".plus-mark-sword").textContent   = playerData.foundSword     ? "➕" : "❌";
-         document.querySelector(".plus-mark-kulon").textContent   = playerData.kulon           ? "➕" : "❌";
-         document.querySelector(".plus-mark-mage").textContent    = playerData.metSage         ? "➕" : "❌";
-         document.querySelector(".plus-mark-village").textContent = playerData.visitedVillage  ? "➕" : "❌";
+         document.querySelector("#plus-mark-sword").textContent   = playerData.foundSword     ? "➕" : "❌";
+         document.querySelector("#plus-mark-kulon").textContent   = playerData.kulon           ? "➕" : "❌";
+         document.querySelector("#plus-mark-mage").textContent    = playerData.metSage         ? "➕" : "❌";
+         document.querySelector("#plus-mark-village2").textContent = playerData.visitedVillage2  ? "➕" : "❌";
+         
 
         }
     </script>
