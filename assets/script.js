@@ -78,7 +78,7 @@
              r70: "Подойдя ближе, ты видишь людей. Они не пропускают тебя дальше без документов, значит придётся вернуться обратно.",
              r71: "Вдалеке виднеется стена, но точнее - ворота, и через них проходят люди: видимо, это вход в столицу.",
              r72: "Попробовать пройти прямо",
-             r73: "Найти обходной вход",
+             r73: "обойти",
              r74: "Ты попал в тюрьму. Что ж… могло быть и лучше, попробуй снова.",
              r75: "Пройдя вдоль стены, ты видишь люк. Ты не совсем уверен, но выбора особо нет. Пройдя через люк, ты оказываешься рядом с большим зданием и табличкой в виде большого плюса — видимо, это больница. Зайдя внутрь, ты встречаешь аптекаря: кажется, вы говорите на одном языке, и это радует.",  
              r76: "О чём спросить аптекаря?",  
@@ -177,7 +177,7 @@
              r70: "כשאתה מתקרב אתה רואה אנשים שבודקים מסמכים — בלי תעודה הם לא מתירים לך לעבור. נראה שתצטרך לחזור אחורה.",
              r71: "מרחוק אתה מבחין בחומה, או בעצם בשער; אנשים חוצים דרכו - כנראה זו כניסת הבירה.",
              r72: "לנסות לעבור ישירות",
-             r73: "למצוא מסלול עקיף",
+             r73: "לעקוף",
              r74: "נכנסת לכלא. טוב… יכול להיות היה יותר טוב, תנסה שוב.",
              r75: "הלכת לאורך החומה וגילית פתח ביוב. לא לגמרי ברור, אבל אין ברירה אחרת. חצת את הפתח ואתה ניצב ליד בניין גדול עם שלט בצלב אדום — כנראה בית חולים. כשנכנסת פנימה, פגשת את הרוקח; נדמה שאתם מדברים בשפה אחת, וזה משמח.",  
              r76: "על מה לשאול את הרוקח?",  
@@ -209,7 +209,6 @@
         function updateTexts() {
          const elements = document.querySelectorAll('[data-lang-key]');
          elements.forEach(element => {
-         if(!element) return;
             if (element.className.includes('plus-mark')) return;
             const key = element.getAttribute('data-lang-key');
             
@@ -240,10 +239,6 @@
          const savedLang = localStorage.getItem('gameLang') || 'ru';
          currentLang = savedLang;
          updateTexts();
-        });
-
-       window.addEventListener('load', function() {
-         document.getElementById('preloader').style.display = 'none';
         });
 
         let player = null;
@@ -279,12 +274,11 @@
                  strength: 0,
                  agility: 0,
                  intelligence: 0,
-                 vitality: 0
                  },
                  choices: [],
                  foundSword: false,
                  metSage: false,
-                 visitedVillage: false,
+                 visitedVillage2: false,
                  kulon: false,
                  achievements: []
                 };
@@ -334,12 +328,15 @@
          }
         }
             
-        let currentPath = null;
-
         function checkDoor(stat) {
          currentPath = stat;
+         const statValue = player.stats[stat] || 0;
          document.getElementById('frame-7').style.display = 'none';
+         if (statValue >= 3) {  
          document.getElementById(`frame-8-${stat}`).style.display = 'block';
+         } else {
+         document.getElementById(`frame-gameover-1`).style.display = 'block';
+         }
         }
 
         function nextFrame() {
@@ -368,7 +365,7 @@
                     player = {
                         name: player.name,
                         gender: player.gender,
-                        stats: { strength: 0, agility: 0, intelligence: 0, vitality: 0 },
+                        stats: { strength: 0, agility: 0, intelligence: 0},
                         choices: [],
                         foundSword: false,
                         metSage: false,
@@ -411,7 +408,6 @@
                  strength: saved.stats?.strength || 0,
                  agility: saved.stats?.agility || 0,
                  intelligence: saved.stats?.intelligence || 0,
-                 vitality: saved.stats?.vitality || 0,
                 },
              choices: saved.choices || [],
              foundSword: Boolean(saved.foundSword),
@@ -429,7 +425,6 @@
          document.getElementById("stat-strength").textContent     = playerData.stats.strength;
          document.getElementById("stat-agility").textContent      = playerData.stats.agility;
          document.getElementById("stat-intelligence").textContent = playerData.stats.intelligence;
-         document.getElementById("stat-vitality").textContent     = playerData.stats.vitality;
       
          document.querySelectorAll(".plus-mark").forEach(el => el.textContent = "");
 
@@ -448,3 +443,49 @@
          console.log(`${translations[currentLang].r90} ${player.metSage ? '➕' : '❌'}`);
          console.log(`${translations[currentLang].r89} ${player.kulon ? '➕' : '❌'}`);
         }
+
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'block';
+            const backgroundImages = [
+             'https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-aj05-p-kartinki-nochnoe-nebo-na-prozrachnom-fone-12.png',
+             'https://cdn.pixabay.com/photo/2024/09/09/11/09/fall-9034528_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/09/09/11/09/fall-9034528_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/03/02/12/02/ai-generated-8608464_1280.jpg',
+             'https://cdn.pixabay.com/photo/2023/02/01/08/01/fairytale-forest-7759927_1280.jpg',
+             'https://cdn.pixabay.com/photo/2021/08/18/07/45/castle-6554907_960_720.jpg',
+             'https://cdn.pixabay.com/photo/2021/08/18/07/45/castle-6554907_960_720.jpg',
+             'https://cdn.pixabay.com/photo/2024/01/24/09/02/ai-generated-8529089_960_720.png',
+             'https://cdn.pixabay.com/photo/2023/06/14/18/22/ai-generated-8063802_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/01/13/19/14/ai-generated-8506431_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/05/07/06/13/ai-generated-8744900_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/05/07/06/13/ai-generated-8744900_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png',
+             'https://cdn.pixabay.com/photo/2024/06/21/04/17/ai-generated-8843438_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png',
+             'https://cdn.pixabay.com/photo/2024/03/05/05/24/ai-generated-8613746_960_720.png',
+             'https://cdn.pixabay.com/photo/2024/05/12/18/34/ai-generated-8757463_960_720.png',
+             'https://cdn.pixabay.com/photo/2024/07/03/14/52/tunnel-8870193_1280.jpg',
+             'https://cdn.pixabay.com/photo/2014/09/29/16/27/keller-466197_1280.jpg',
+             'https://cdn.pixabay.com/photo/2024/06/06/06/58/homeopathic-8812002_1280.jpg',
+             'images/apteka.jpg',
+             'images/castle_gate.png',
+             '',
+             '',
+             '',
+             '',
+             '',
+
+            ];
+            const loadImages = backgroundImages.map(url => {
+                return new Promise((resolve) => {
+                 const img = new Image();
+                 img.src = url;
+                 img.onload = resolve;
+                 img.onerror = resolve;
+                });
+            });
+
+            Promise.all(loadImages).then(() => {
+             document.getElementById('preloader').style.display = 'none';
+            });
+        });
