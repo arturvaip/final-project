@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-     <link rel="stylesheet" href="assets/style.css">
+     <title>иссекай</title>   
+     <link rel="stylesheet" href="style.css">
      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD04WF6XB5"></script>
      <script>
          window.dataLayer = window.dataLayer || [];
@@ -59,8 +60,8 @@
          <h4 class="choice" data-lang-key="r12">Какой же путь ты выберешь?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="makeChoice('agility')" data-lang-key="r13">правая тропа</button>
              <button class="knopka" onclick="makeChoice('strength')" data-lang-key="r14">левая тропа</button>
+             <button class="knopka" onclick="makeChoice('agility')" data-lang-key="r13">правая тропа</button>
          </div>
         </div>
 
@@ -80,7 +81,7 @@
 
          <div class="okno">
              <button data-lang-key="r21" class="knopka" onclick="document.getElementById('frame-4').style.display='none'; document.getElementById('frame-gameover-2').style.display='block';">прыгнуть в обрыв</button>
-             <button data-lang-key="r22" class="knopka" onclick="makeChoice('intelligence')">посторатся акуратно спустится</button>
+             <button data-lang-key="r22" class="knopka" onclick="makeChoice('agility')">посторатся акуратно спустится</button>
          </div>
         </div>
 
@@ -90,7 +91,7 @@
 
          <div class="okno">
              <button data-lang-key="r25" class="knopka" onclick="makeChoice('strength')">посторатся сосредоточится и вернутся в реальность</button>
-             <button data-lang-key="r26" class="knopka" onclick="makeChoice('vitality')">доверится ощущением и пройти дальше</button>
+             <button data-lang-key="r26" class="knopka" onclick="makeChoice('intelligence')">доверится ощущением и пройти дальше</button>
          </div>
         </div>
 
@@ -109,9 +110,9 @@
          <h4 data-lang-key="r32" class="choice">куда тебе пойти?</h4>
 
          <div class="okno">
-             <button data-lang-key="r33" class="knopka" onclick="makeChoice('strength'); checkDoor('strength');">в левый, веть, я сильный</button>
-             <button data-lang-key="r34" class="knopka" onclick="makeChoice('agility'); checkDoor('agility');">в средний, ловкость, моё всё</button>
-             <button data-lang-key="r35" class="knopka" onclick="makeChoice('intelligence'); checkDoor('intelligence');">в правый, магия мне по душе</button>
+             <button data-lang-key="r33" class="knopka" onclick="checkDoor('strength');">в левый, веть, я сильный</button>
+             <button data-lang-key="r34" class="knopka" onclick="checkDoor('agility');">в средний, ловкость, моё всё</button>
+             <button data-lang-key="r35" class="knopka" onclick="checkDoor('intelligence');">в правый, магия мне по душе</button>
          </div>
         </div>
         <!--выбрана сила-->
@@ -203,41 +204,39 @@
 
         <div id="frame-9-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
          <h3 data-lang-key="r70" class="text">подойдя ближе ты видишь людей, подойдя к ним они тебя не пропускают без документов, видимо придётся вернётся обратно</h3>
-         <h4 data-lang-key="r71" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+         <h4 data-lang-key="r71" class="choice">вдалике веднеется стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
 
          <div class="okno">
              <button data-lang-key="r72" class="knopka" onclick="document.getElementById('frame-9-agility').style.display='none'; document.getElementById('frame-gameover-4').style.display='block';">попробувать пойти на прямую</button>
-             <button data-lang-key="r73" class="knopka" onclick="nextFrame()">найти обходной вход</button>
+             <button data-lang-key="r73" class="knopka" onclick="nextFrame()">обойти</button>
          </div>
         </div>
 
         <div id="frame-10-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r75" class="text">пройдя в доль стены ты видишь люк? вроде бы ты не уверен, но и выбора то особо нет, пройдя по люку дальше ты выходишь около большого здание с табличкой ввиде большого плюса, "видимо это больница" зайдя в неё ты видишь аптекаря? не уверен, но вроде говорите вы на одном языке, хоть это радует.</h3>
-         <h4 data-lang-key="r76" class="choice">про что же спросить лекаря?</h4>
+         <h3 data-lang-key="r" class="text">пройдя в доль стены ты видишь люк? вроде бы но ты не уверен, но и выбора то особо нет, пройдя по люку дальше ты выходишь около большого здание с табличкой ввиде большого плюса, "видимо это аптека".</h3>
+         <h4 data-lang-key="r" class="choice">вы решаете зайти внутрь</h4>
 
          <div class="okno">
-             <button data-lang-key="r77" class="knopka" onclick="nextFrame(); nextFrame()">в каком гасударстве я нахожусь?</button>
-             <button data-lang-key="r78" class="knopka" onclick="increaseStat('intelligence'); nextFrame()">где здесь можно раздобить денег, и информацию?</button>
+             <button data-lang-key="r41" class="knopka" onclick="increaseStat('intelligence'); nextFrame()">продолжить</button>
          </div>
         </div>
 
         <div id="frame-11-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r79" class="text">странно посмотрев на тебя, он головой указал на подсобную дверь</h3>
-         <h4 data-lang-key="r80" class="choice">решив не задавать лишных вопросов ты заходишь туда.</h4>
+         <h3 data-lang-key="r" class="text" style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 2);"> зайдя в неё, ты видишь аптекаря? не уверен, но вроде говорите вы на одном языке, хоть это радует ты спрашиваешь у него, "где у вас тут можно подзаработать деньги?" странно посмотрев на тебя, он головой указал на подсобную дверь</h3>
+         <h4 data-lang-key="r" class="choice" style="-webkit-text-stroke: 0.02em black;">решив не задавать лишных вопросов ты заходишь туда.</h4>
 
          <div class="okno">
-             <button data-lang-key="r44" class="knopka" onclick="nextFrame()">попробувать пойти на прямую</button>
-             <button data-lang-key="r45" class="knopka" onclick="nextFrame()">найти обходной вход</button>
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
          </div>
         </div>
 
         <div id="frame-12-agility" class="frame agility-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r62" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
-         <h4 data-lang-key="r62" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
+         <h3 data-lang-key="r" class="text">Дверь ловкости приняла тебя, поздравляю. Вдруг ты замечаешь, что ты не внутри замка, а на поляне, ты решаешь побродить</h3>
+         <h4 data-lang-key="r" class="choice">вдалике веднее стена, хотя нет, скорее на ворота, и там проходят люди, видимо вход в столицу</h4>
 
          <div class="okno">
-             <button data-lang-key="r44" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
-             <button data-lang-key="r45" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
+             <button data-lang-key="r" class="knopka" onclick="nextFrame(); nextFrame()">попробувать пойти на прямую</button>
+             <button data-lang-key="r" class="knopka" onclick="increaseStat('strength'); nextFrame()">найти обходной вход</button>
          </div>
         </div>
 
@@ -268,7 +267,6 @@
                 <p class="titri"><span data-lang-key="r83">Сила </span><span id="stat-strength">0</span></p>
                 <p class="titri"><span data-lang-key="r84">Ловкость </span><span id="stat-agility">0</span></p>
                 <p class="titri"><span data-lang-key="r85">Интеллект </span><span id="stat-intelligence">0</span></p>
-                <p class="titri"><span data-lang-key="r86">Живучесть </span><span id="stat-vitality">0</span></p>
                 <p class="titri"><strong data-lang-key="r87">Достижения</strong></p>
                 <p class="titri"><span data-lang-key="r92">Был в деревне</span> <span id="plus-mark-village2"></span></p>
                 <p class="titri"><span data-lang-key="r88">Найден меч</span> <span id="plus-mark-sword"></span></p>
@@ -280,7 +278,11 @@
 
         <div id="frame-gameover-1" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r37" class="text">Ты проиграл, ты не смог найти свою дверь.</h3> 
+         <div class="spacer"></div>
+         <div>
+         <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+         </div>
         </div>
 
         <div id="frame-gameover-2" class="frame" style="display:none;" lang="he" dir="rtl">
@@ -299,6 +301,6 @@
         </div>
      
      <div id="greeting" style="display: none; color: white; font-size: 2vw;"></div>
-         <script src="assets/script.js"></script>
+         <script src="script.js"></script>
     </body>
 </html>
