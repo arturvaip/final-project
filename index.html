@@ -3,7 +3,7 @@
     <head>
      <title>иссекай</title>   
      <link rel="stylesheet" href="assets/style.css">
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD04WF6XB5"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD04WF6XB5"></script>
      <script>
          window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
@@ -53,12 +53,12 @@
              <button class="knopka" onclick="makeChoice('strength')">
                  <span  data-lang-key="r9">Пытаться брыкаться и убежать.</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r83">сила</div>
+                 <div class="pod-text" data-lang-key="r139">сила</div>
             </button>
              <button class="knopka" onclick="makeChoice('intelligence')">
                  <span data-lang-key="r10">Попытаться придумать план по безопасному приземлению.</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r85">интилект</div>
+                 <div class="pod-text" data-lang-key="r141">интилект</div>
             </button>
          </div>
         </div>
@@ -71,12 +71,12 @@
              <button class="knopka" onclick="makeChoice('strength')">
                  <span data-lang-key="r14"> левая тропа </span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r83">сила</div>
+                 <div class="pod-text" data-lang-key="r139">сила</div>
                 </button>
              <button class="knopka" onclick="makeChoice('agility')">
                  <span data-lang-key="r13"> правая тропа </span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
             </button>
          </div>
         </div>
@@ -89,12 +89,12 @@
              <button class="knopka" onclick="makeChoice('intelligence')">
                  <span data-lang-key="r17">попытаться прислушатся</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r85">интилект</div>
+                 <div class="pod-text" data-lang-key="r141">интилект</div>
             </button>
              <button class="knopka" onclick="makeChoice('agility')">
                  <span data-lang-key="r18"> закрыть уши, и ускорить щаг</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
             </button>
          </div>
         </div>
@@ -107,13 +107,13 @@
              <button  class="knopka" onclick="document.getElementById('frame-4').style.display='none'; document.getElementById('frame-gameover-2').style.display='block';">
                 <span data-lang-key="r21">прыгнуть в обрыв</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
             
             </button>
              <button  class="knopka" onclick="makeChoice('agility')">
                  <span data-lang-key="r22">посторатся акуратно спустится</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
             </button>
          </div>
         </div>
@@ -126,12 +126,12 @@
              <button  class="knopka" onclick="makeChoice('strength')">
                  <span data-lang-key="r25">посторатся сосредоточится и вернутся в реальность</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r83">сила</div>
+                 <div class="pod-text" data-lang-key="r139">сила</div>
             </button>
              <button class="knopka" onclick="makeChoice('intelligence')">
                  <span data-lang-key="r26">доверится ощущением и пройти дальше</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r85">интилект</div>
+                 <div class="pod-text" data-lang-key="r141">интилект</div>
             </button>
          </div>
         </div>
@@ -144,12 +144,12 @@
              <button  class="knopka" onclick="makeChoice('agility')">
                  <span data-lang-key="r29">проскочить мимо него</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
             </button>
              <button class="knopka" onclick="makeChoice('intelligence')">
                  <span data-lang-key="r30">подождать пока он не потеряет бдительность и обойти его</span>
                  <div class="spacer" class="pod-text"></div>
-                 <div class="pod-text" data-lang-key="r85">интилект</div>
+                 <div class="pod-text" data-lang-key="r141">интилект</div>
             </button>
          </div>
         </div>
@@ -159,20 +159,20 @@
          <h4 data-lang-key="r32" class="choice">куда тебе пойти?</h4>
 
          <div class="okno">
-             <button class="knopka" onclick="checkDoor('strength');">
+             <button class="knopka" onclick="selectPath('strength'); checkDoor('strength');">
                  <span data-lang-key="r33">в левый, веть, я сильный</span>
                  <div class="spacer"></div>
-                 <div class="pod-text" data-lang-key="r83">сила</div>
+                 <div class="pod-text" data-lang-key="r139">сила</div>
              </button>
-             <button class="knopka" onclick="checkDoor('agility');">
+             <button class="knopka" onclick="selectPath('agility'); checkDoor('agility');">
                  <span data-lang-key="r34">в средний, ловкость, моё всё</span>
                  <div class="spacer"></div>
-                 <div class="pod-text" data-lang-key="r84">ловкость</div>
+                 <div class="pod-text" data-lang-key="r140">ловкость</div>
              </button>
-             <button class="knopka" onclick="checkDoor('intelligence');">
+             <button class="knopka" onclick="selectPath('intelligence'); checkDoor('intelligence');">
                  <span data-lang-key="r35">в правый, магия мне по душе</span>
                  <div class="spacer"></div>
-                 <div class="pod-text" data-lang-key="r85">интилект</div>
+                 <div class="pod-text" data-lang-key="r141">интилект</div>
              </button>
          </div>
         </div>
@@ -225,7 +225,7 @@
         </div>
 
         <div id="frame-13-strength" class="frame strength-div" style="display: none;" lang="he" dir="rtl">
-         <h3 data-lang-key="r56" class="text" id="mech">Ты спокойно постучал в дверь. Через несколько секунд она приоткрылась, и из дома вышел седой мудрец. Он внимательно осмотрел тебя и сказал: "Ты несёшь на себе знак древней силы. Заходи, расскажу тебе больше.</h3>
+         <h3 data-lang-key="r56" class="text" id="mech">Ты спокойно постучал в дверь. Через несколько секунд она приоткрылась, и из дома вышел седой мудрец. Он внимательно осмотрел тебя и сказал: "Ты несёшь на себе знак древней силы. Заходи, расскажу тебе больше."</h3>
          <h4 data-lang-key="r57" class="choice">что же ты будешь делать?</h4>
 
          <div class="okno">
@@ -305,7 +305,7 @@
          <h4 data-lang-key="r106" class="choice">Как поступишь?</h4>
 
          <div class="okno">
-             <button data-lang-key="r107" class="knopka" onclick="player.stoleMap = true; increaseStat('agility'); nextFrame(); player.stoleMap = true; localStorage.setItem('player', JSON.stringify(player));">Быстро схватить карту и сбежать</button>
+             <button data-lang-key="r107" class="knopka" onclick="increaseStat('agility'); nextFrame(); player.stoleMap = true; localStorage.setItem('player', JSON.stringify(player));">Быстро схватить карту и сбежать</button>
              <button data-lang-key="r108" class="knopka" onclick="nextFrame(); nextFrame();">Остаться и наблюдать дальше</button>
          </div>
         </div>
@@ -371,7 +371,7 @@
          <h4 data-lang-key="r129" class="choice">Король приказывает привести тебя.</h4>
 
          <div class="okno">
-             <button data-lang-key="r130" class="knopka" onclick="nextFrame();">Подойти к трону</button>
+             <button data-lang-key="r130" class="knopka" onclick="player.surking = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame();">Подойти к трону</button>
          </div>
         </div>
 
@@ -387,6 +387,196 @@
         <!--конец ловкости-->
         <!--начало ума\магий-->
 
+        <div id="frame-8-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">перед тем как продолжить, хочу скачать, что путь магий был самый сложный для меня так что надеюсь что вам понравится.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+
+         <div id="frame-9-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">открыв дверь магий ты видишь ещё две двери, на одной ресунок глаза, на другой песочные часы.</h3>
+         <h4 data-lang-key="r" class="choice">в какую двень тебе лучше войти?</h4>
+
+         <div class="okno">
+             <button data-lang-key="r" class="knopka" onclick="nextFrame()">песочные часы</button>
+             <button data-lang-key="r" class="knopka" onclick="document.getElementById('frame-9-intelligence').style.display='none'; document.getElementById('frame-21-intelligence').style.display='block';">глаз</button>
+         </div>
+        </div>
+
+        <div id="frame-10-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты открываешь дверь с символом песочных часов. Перед тобой — каменный зал с подвешенными в воздухе часами. В центре — арка с вращающимся механизмом. Стоит только коснуться её, как всё замирает...</h3>
+         <h4 data-lang-key="r" class="choice">Ты чувствуешь, как время вокруг тебя подчиняется воле.</h4>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-11-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты оказываешься в древнем храме. Вокруг — изломанные статуи и звук капающей воды. Перед тобой два прохода.</h3>
+         <h4 data-lang-key="r" class="choice">На стене надпись: «Истина часто прячется в тени».</h4>
+
+         <div class="okno">
+             <button data-lang-key="r" class="knopka" onclick="player.foundstuff = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame();" >пойти на лево, тёмный и забыти путь</button>
+             <button data-lang-key="r" class="knopka" onclick="nextFrame()">пойти на право, яркий и красивый</button>
+         </div>
+        </div>
+
+        <div id="frame-12-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Пройдя вперёд, ты выходишь к зеркалу. В нём — ты, но старый. Он говорит: "Ты используешь магию времени, но понимаешь ли её цену?"</h3>
+         <h4 data-lang-key="r" class="choice">...</h4>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-13-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Мир распадается вокруг тебя — и ты падаешь во временную воронку. Оказываешься в будущем: металлические башни, небо из стекла. Люди боятся магии.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-14-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты видишь храм — последний, где хранят знания. Хранитель предлагает сделать выбор:</h3>
+         <h4 data-lang-key="r" class="choice">п.а: это важный выбор, выберай с умом</h4>
+
+         <div class="okno">
+             <button data-lang-key="r" class="knopka" onclick="player.konc1 = true; localStorage.setItem('player', JSON.stringify(player));nextFrame()">Уничтожить магию времени, чтобы спасти будущее.</button>
+             <button data-lang-key="r" class="knopka" onclick="player.konc2 = true; localStorage.setItem('player', JSON.stringify(player));nextFrame()">Сохранить её, пусть даже во вред — знание слишком ценно.</button>
+         </div>
+        </div>
+
+        <div id="frame-15-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Вне зависимости от выбора, ты проходишь ритуал слияния. Ты чувствуешь, как твоя душа вплетается в ткань времени.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="showstuffFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-16-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты видишь свои прошлые ошибки, свои выборы. Всё — как на ладони.</h3>
+         <h4 data-lang-key="r" class="text" id="stuf">посох в твоей руке защищает тебя от пульсируюшей боли в голове</h4>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-17-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты возвращаешься туда, где всё началось. Механизм часов останавливается. Теперь ты можешь заморозить момент — или позволить ему течь.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="increaseStat('intelligence'); increaseStat('intelligence'); showfinal()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-18-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Уничтожил магию — мир стал стабильным. Ты исчез, но оставил след в истории.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="document.getElementById('frame-win-5').style.display='block'; document.getElementById('frame-18-intelligence').style.display='none';">/button>
+         </div>
+        </div>
+
+        <div id="frame-19-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Сохранил магию — ты стал Хранителем времени, но навсегда остался вне эпох.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="document.getElementById('frame-win-6').style.display='block'; document.getElementById('frame-19-intelligence').style.display='none';"></button>
+         </div>
+        </div>
+
+        <div id="frame-20-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">перед тобой открылся портал, в нём ты Ты видишь будущее, где магия и технологии объединены. Ты стал первооткрывателем новой эры.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="player.konc1 = false; player.konc2 = true; localStorage.setItem('player', JSON.stringify(player)); document.getElementById('frame-win-7').style.display='block'; document.getElementById('frame-20-intelligence').style.display='none';">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-21-intelligence" class="frame intelligence-div" style="display: none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты открываешь дверь с символом глаза. Мир дрожит, словно ткань. Стены замка исчезают. Перед тобой — лес, бесконечный, мерцающий.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-22-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты идёшь вперёд, но деревья меняют форму. Всё вокруг кажется сном. Ты слышишь голос:</h3>
+         <h4 data-lang-key="r" class="choice">"Иллюзия — это не ложь, а лишь ещё одна правда."</h4>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-23-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Перед тобой два пути. На одном — мост из света. На другом — мрачная тропа сквозь туман.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r" class="knopka" onclick="nextFrame()">Светлый путь</button>
+             <button data-lang-key="r" class="knopka" onclick="player.foundstuffilusion = true; localStorage.setItem('player', JSON.stringify(player)); nextFrame()">Мрачный путь</button>
+         </div>
+        </div>
+
+        <div id="frame-24-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты встречаешь женщину в белом. Она говорит, что ищет выход. Но стоит тебе отвернуться — её лицо меняется</h3>
+         <h4 data-lang-key="r" class="choice">Она шепчет: "Ты ведь тоже хочешь остаться здесь, навсегда?"</h4>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="increaseStat('strength'); nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-25-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты видишь своё отражение — и оно не двигается. Оно смотрит и повторяет: "Кем ты стал, следуя за иллюзиями?"</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-26-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты находишь выход из леса. Он ведёт в каменный круг с надписью:</h3>
+         <h4 data-lang-key="r" class="choice">"Иллюзия или реальность — решает сердце."</h4>
+
+         <div class="okno">
+             <button data-lang-key="r" class="knopka" onclick="document.getElementById('frame-gameover-6').style.display='block'; document.getElementById('frame-26-intelligence').style.display='none';">Выйти и вернуться в "реальный" мир</button>
+             <button data-lang-key="r" class="knopka" onclick="nextFrame()">Остаться в лесу и принять его как свой дом.</button>
+         </div>
+        </div>
+
+        <div id="frame-27-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты построил хижину. С каждым днём лес становится понятнее. Ты лечишь раненых зверей, находишь знания среди ветвей.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame(); increaseStat('strength');">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-28-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Однажды, проходящие мимо путники зовут тебя мудрецом. Ты улыбаешься и лишь предлагаешь им травы от боли.</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="nextFrame()">продолжить</button>
+         </div>
+        </div>
+
+        <div id="frame-29-intelligence" class="frame intelligence-div" style="display: none;" lang="ru" dir="ltr">
+         <h3 data-lang-key="r" class="text">Ты сидишь за столом, вдруг в дверь стучат. Открыв, ты видишь фигуру. В его руках — меч с символом деревни. Он ничего не говорит. и ты произносишь: "Ты несёшь на себе знак древней силы. Заходи, расскажу тебе больше.".</h3>
+
+         <div class="okno">
+             <button data-lang-key="r41" class="knopka" onclick="document.getElementById('frame-win-8').style.display = 'block'; document.getElementById('frame-29-intelligence').style.display = 'none';">продолжить</button>
+         </div>
+        </div>
 
         <!--конец ума\магий-->
         <div id="frame-win" class="frame" style="display: none;" lang="he" dir="rtl">
@@ -421,6 +611,44 @@
             </div>
         </div>
 
+        <div id="frame-win-5" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">поздровляю! это четвёртая хорошоя концовка, на этом сюжет обрывается</h3>
+         <div class="spacer"></div>
+           <div>
+             <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+             <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
+            </div>
+        </div>
+
+        <div id="frame-win-6" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">поздровляю! это пьятая хорошоя концовка, на этом сюжет обрывается</h3>
+         <div class="spacer"></div>
+           <div>
+             <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+             <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
+            </div>
+        </div>
+
+        <div id="frame-win-7" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">поздровляю! это первая, секретная концовка, на этом сюжет обрывается</h3>
+         <div class="spacer"></div>
+           <div>
+             <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+             <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
+            </div>
+        </div>
+
+        <div id="frame-win-8" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">поздровляю! это шестая, хорошоя концовка, на этом сюжет обрывается, и начинается укого то друго-го</h3>
+         <h4 data-lang-key="r" class="choice">"Новые пути начинаются не всегда там, где ты их ждёшь..."</h4>
+         <div class="spacer"></div>
+           <div>
+             <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+             <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
+            </div>
+        </div>
+
+
         <div id="titri" style="display: none;" lang="he" dir="rtl">
          <h3  class="titri" data-lang-key="r81">ваше путешествие подошло к концу</h3>
            <div class="titri-block">
@@ -430,16 +658,21 @@
                 <p class="titri"><span data-lang-key="r84">Ловкость </span><span id="stat-agility">0</span></p>
                 <p class="titri"><span data-lang-key="r85">Интеллект </span><span id="stat-intelligence">0</span></p>
                 <p class="titri"><strong data-lang-key="r87">Достижения</strong></p>
-                <p class="titri"><span data-lang-key="r88">Найден меч</span> <span id="plus-mark-sword"></span></p>
-                <p class="titri"><span data-lang-key="r89">Кулон найден</span> <span id="plus-mark-kulon"></span></p>
-                <p class="titri"><span data-lang-key="138">нашёл карту</span> <span id="plus-mark-stoleMap"></span></p>
+                <p class="titri strength"><span data-lang-key="r88">Найден меч</span> <span id="plus-mark-sword"></span></p>
+                <p class="titri strength"><span data-lang-key="r89">Кулон найден</span> <span id="plus-mark-kulon"></span></p>
+                <p class="titri agility"><span data-lang-key="138">нашёл карту</span> <span id="plus-mark-stoleMap"></span></p>
+                <p class="titri intelligence"><span data-lang-key="">нашёл посох</span> <span id="plus-mark-foundstuff"></span></p>
+                <p class="titri intelligence"><span data-lang-key="">нашёл посох илюзий</span> <span id="plus-mark-foundstuffilusion"></span></p>
+                <p class="titri agility"><span data-lang-key="">спас короля</span> <span id="plus-mark-surking"></span></p>
+                <p class="titri intelligence"><span data-lang-key="">уничтожил магию</span> <span id="plus-mark-konc1"></span></p>
+                <p class="titri intelligence"><span data-lang-key="">спас магию</span> <span id="plus-mark-konc2"></span></p>
             </div>
          <button class="knopka restart" data-lang-key="r40">попробувать снова</button>
         </div>
 
         <div id="frame-gameover-1" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r37" class="text">поздровляю, это 3 плохая концовка. Ты проиграл, ты не смог найти свою дверь.</h3> 
-         <p>пост скриптум, концовки расчитиваются по мере их создание а не по сюжету</p>
+         <h4 data-lang-key="r" class="choice">пост скриптум, концовки расчитиваются по мере их создание а не по сюжету</h4>
          <div class="spacer"></div>
          <div>
          <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
@@ -465,6 +698,13 @@
 
         <div id="frame-gameover-5" class="frame" style="display:none;" lang="he" dir="rtl">
          <h3 data-lang-key="r135" class="text">поздровляю, это 1 плохая концовка. Ты не успел. Существо в капсуле проснулось. Оно открыло глаза, и мир погрузился в хаос. Ты стал первым свидетелем конца этого мира.</h3> 
+         <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
+         <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
+        </div>
+
+        <div id="frame-gameover-6" class="frame" style="display:none;" lang="he" dir="rtl">
+         <h3 data-lang-key="r" class="text">Ты возвращаешься — но всё стало серым, пустым. Ты больше не чувствуешь магии. Ты не можешь ни спать, ни видеть сны.</h3> 
+         <h3 data-lang-key="r" class="text">поздровляю, это 4 плохая концовка.</h3>
          <button class="knopka restart" data-lang-key="r40">Попробовать снова</button>
          <button class="knopka" onclick="show_titri()" data-lang-key="r63">титры</button>
         </div>
