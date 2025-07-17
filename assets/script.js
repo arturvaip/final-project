@@ -136,14 +136,17 @@
              r128: "Ты вбегаешь в зал. «Стойте! Не пейте!» — кричишь ты. После проверки ты оказываешься прав.",
              r129: "Король приказывает привести тебя.",
              r130: "Подойти к трону",
-             r131: "«Ты спас мне жизнь», — говорит король. — «Теперь ты — тайный шпион короны.»",
-             r132: "Ты обрёл смысл в новом мире.",
+             r131: "«Ты спас мне жизнь», — говорит король. — «В знак благодарности я хочу предложить тебе важную миссию — стать тайным шпионом короны. Ты согласен?»",
+             r132: "обрёл ли ты смысл в новом мире?",
              r133: "Поздравляю! Это вторая хорошая концовка. Ты стал героем легенд, но твоё имя никто не узнает.",
              r134: "Поздравляю! Это третья хорошая концовка. Ты стал героем и обрёл смысл в новом мире.",
              r135: "Поздравляю, это первая плохая концовка. Существо проснулось. Мир погиб. Ты стал свидетелем его конца.",
              r136: "Принять предложение",
              r137: "Покинуть лабораторию",
              r138: "Нашёл карту",
+             r139: "Сила",  
+             r140: "Ловкость",  
+             r141: "Интеллект",
             },
             he: { 
              r1: "יום שגרתי נקטע באור מסמא, מסתורי — כאילו השמים נקרעו לרווחה.",
@@ -276,14 +279,17 @@
              r128: "אתה פורץ לאולם הסעודה. \"חכו! אל תשתו!\" — אתה צועק. לאחר בדיקה מתברר שצדקת.",
              r129: "המלך מבקש לראות אותך מיד.",
              r130: "לגשת אל המלך",
-             r131: "\"הצלת את חיי,\" אומר המלך. \"מהיום — אתה תהיי המרגל שלי, איש הצללים של הכתר.\"",
-             r132: "מצאת משמעות חדשה בעולם הזה.",
+             r131: "״הצלת את חיי,״ אומר המלך. ״כאות תודה, אני רוצה להציע לך משימה חשובה – להפוך למרגל סודי של הכתר. האם אתה מסכים?״",
+             r132: "האם מצאת משמעות חדשה בעולם הזה?",
              r133: "מזל טוב! זהו הסיום הטוב השני. הפכת לאגדה, אך איש לא יידע את שמך.",
              r134: "מזל טוב! זהו הסיום הטוב השלישי. הפכת לגיבור ומצאת את ייעודך בעולם החדש.",
              r135: "מזל טוב… זהו הסיום הרע הראשון. הקפסולה נפתחה. העולם שקע בכאוס. היית העד הראשון לסוף.",
              r136: "לקבל את ההצעה",
              r137: "לעזוב את המעבדה",
              r138: "מצאת מפה",
+             r139: "כוח",  
+             r140: "זריזות",  
+             r141: "Иאינטליגנציה",
             }
         }    
 
@@ -361,6 +367,11 @@
                  foundSword: false,
                  kulon: false,
                  stoleMap: false,
+                 foundstuff: false,
+                 konc1: false,
+                 konc2: false,
+                 surking: false,
+                 foundstuffilusion: false,
                  achievements: []
                 };
       
@@ -393,6 +404,39 @@
          document.getElementById('frame-11-strength').style.display = "none";
         }
 
+        function showstuffFrame() {  
+         const stuffText = document.getElementById('stuf');
+         const player = JSON.parse(localStorage.getItem('player')) || { foundstuff: false };
+  
+           if (player.foundstuff) {
+             stuffText.textContent = currentLang === 'ru'
+               ? "Посох, найденный ранее, защищает тебя от боли"
+               : "המטה שנמצא קודם לכן מגן עליך מהכאב";
+            } else {
+             stuffText.textContent = currentLang === 'ru'
+               ? "Ничто не защищает тебя от ужасной боли в голове"
+               : "שום דבר לא מגן עליך מהכאב הנורא שבראשך";
+            }
+
+         document.getElementById('frame-15-intelligence').style.display = "none";
+         document.getElementById('frame-16-intelligence').style.display = "block";   
+        }
+
+        function showfinal() {  
+         const player = JSON.parse(localStorage.getItem('player')) || { konc1: false, konc2: false, foundstuff: false };
+         
+         if (player.foundstuff) {
+            document.getElementById('frame-20-intelligence').style.display = "block"
+         } else if (player.konc1) {
+          document.getElementById('frame-18-intelligence').style.display = "block"
+         } else if (player.konc2) {
+          document.getElementById('frame-19-intelligence').style.display = "block"
+         } 
+         
+         
+         document.getElementById('frame-17-intelligence').style.display = "none";
+        }
+
         function makeChoice(stat) {
          if (!player) return;
     
@@ -408,9 +452,13 @@
             currentFrame = nextFrame;
          }
         }
-            
+          
         function checkDoor(stat) {
          currentPath = stat;
+         const player = JSON.parse(localStorage.getItem('player')) || {};
+         player.currentPath = stat;
+         localStorage.setItem('player', JSON.stringify(player));
+
          const statValue = player.stats[stat] || 0;
          document.getElementById('frame-7').style.display = 'none';
          if (statValue >= 3) {  
@@ -418,6 +466,11 @@
          } else {
          document.getElementById(`frame-gameover-1`).style.display = 'block';
          }
+        }
+
+        function selectPath(path) {
+         player.currentPath = path;
+         localStorage.setItem("player", JSON.stringify(player));
         }
 
         function nextFrame() {
@@ -451,6 +504,11 @@
                         foundSword: false,
                         kulon: false,
                         stoleMap: false,
+                        foundstuff: false,
+                        konc1: false,
+                        konc2: false,
+                        surking: false,
+                        foundstuffilusion: false,
                         achievements: [],
                     };
                     localStorage.setItem('player', JSON.stringify(player));
@@ -473,15 +531,16 @@
              console.warn("Игрок не найден или неправильный параметр: " + stat);
             }
         }
+
         function show_titri() {
          const titriElement = document.getElementById("titri");
-            if(!titriElement) {
+            if (!titriElement) {
              console.error("Элемент #titri не найден");
              return;
             }
+
          const raw = localStorage.getItem('player');
          const saved = raw ? JSON.parse(raw) : {};
-
          const playerData = {
              name: saved.name || (currentLang === 'ru' ? "Безымянный герой" : "גיבור אלמוני"),
              stats: {
@@ -490,36 +549,59 @@
                  intelligence: saved.stats?.intelligence || 0,
                 },
              choices: saved.choices || [],
+             currentPath: saved.currentPath || null,
              foundSword: Boolean(saved.foundSword),
              kulon: Boolean(saved.kulon),
              stoleMap: Boolean(saved.stoleMap),
+             foundstuff: Boolean(saved.foundstuff),
+             konc1: Boolean(saved.konc1),
+             konc2: Boolean(saved.konc2),
+             surking: Boolean(saved.surking),
+             foundstuffilusion: Boolean(saved.foundstuffilusion),
             };
-
-         document.getElementById("credits-name").textContent = playerData.name;
-      
+        
+         document.querySelectorAll('.titri.strength, .titri.agility, .titri.intelligence').forEach(el => {
+             el.style.display = 'none';
+            });
+            if (['strength', 'agility', 'intelligence'].includes(playerData.currentPath)) {
+             document.querySelectorAll(`.titri.${playerData.currentPath}`).forEach(el => {
+                 el.style.display = 'block';
+                });
+            }   
+                
          document.querySelector('.frame[style*="block"]').style.display = 'none';
          document.getElementById("titri").style.display = 'block';
-      
+        
          document.getElementById("credits-name").textContent = playerData.name;
-         document.getElementById("stat-strength").textContent     = playerData.stats.strength;
-         document.getElementById("stat-agility").textContent      = playerData.stats.agility;
+         document.getElementById("stat-strength").textContent = playerData.stats.strength;
+         document.getElementById("stat-agility").textContent = playerData.stats.agility;
          document.getElementById("stat-intelligence").textContent = playerData.stats.intelligence;
-      
+        
          document.querySelectorAll(".plus-mark").forEach(el => el.textContent = "");
-
-         document.querySelector("#plus-mark-sword").textContent   = playerData.foundSword     ? "➕" : "❌";
-         document.querySelector("#plus-mark-kulon").textContent   = playerData.kulon           ? "➕" : "❌";
-         document.querySelector("#plus-mark-stoleMap").textContent = playerData.stoleMap  ? "➕" : "❌";
-         
-         console.log(`${translations[currentLang].r92} ${player.name}`);
-         console.log(`${translations[currentLang].r97} ${player.gender}`);
-         console.log(`${translations[currentLang].r83} ${player.stats.strength}`);
-         console.log(`${translations[currentLang].r84} ${player.stats.agility}`);
-         console.log(`${translations[currentLang].r85} ${player.stats.intelligence}`);
-         console.log(`${translations[currentLang].r88} ${player.foundSword ? '➕' : '❌'}`);
-         console.log(`${translations[currentLang].r89} ${player.kulon ? '➕' : '❌'}`);
-         console.log(`${translations[currentLang].r138} ${player.stoleMap ? '➕' : '❌'}`);
+         document.querySelector("#plus-mark-sword").textContent = playerData.foundSword ? "➕" : "❌";
+         document.querySelector("#plus-mark-kulon").textContent = playerData.kulon ? "➕" : "❌";
+         document.querySelector("#plus-mark-stoleMap").textContent = playerData.stoleMap ? "➕" : "❌";
+         document.querySelector("#plus-mark-foundstuff").textContent = playerData.foundstuff ? "➕" : "❌";
+         document.querySelector("#plus-mark-konc1").textContent = playerData.konc1 ? "➕" : "❌";
+         document.querySelector("#plus-mark-konc2").textContent = playerData.konc2 ? "➕" : "❌";
+         document.querySelector("#plus-mark-surking").textContent = playerData.surking ? "➕" : "❌";
+         document.querySelector("#plus-mark-foundstuffilusion").textContent = playerData.foundstuffilusion ? "➕" : "❌";
+        
+         console.log(`${translations[currentLang].r92} ${playerData.name}`);
+         console.log(`${translations[currentLang].r97} ${saved.gender}`);
+         console.log(`${translations[currentLang].r83} ${playerData.stats.strength}`);
+         console.log(`${translations[currentLang].r84} ${playerData.stats.agility}`);
+         console.log(`${translations[currentLang].r85} ${playerData.stats.intelligence}`);
+         console.log(`${translations[currentLang].r88} ${playerData.foundSword ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r89} ${playerData.kulon ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r138} ${playerData.stoleMap ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r} ${playerData.foundstuff ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r} ${playerData.konc1 ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r} ${playerData.konc2 ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r} ${playerData.surking ? '➕' : '❌'}`);
+         console.log(`${translations[currentLang].r} ${playerData.foundstuffilusion ? '➕' : '❌'}`);
         }
+
 
         window.addEventListener('load', function() {
          const preloader = document.getElementById('preloader');
@@ -537,12 +619,17 @@
              'https://cdn.pixabay.com/photo/2024/05/07/06/13/ai-generated-8744900_1280.jpg',
              'https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png',
              'https://cdn.pixabay.com/photo/2024/06/21/04/17/ai-generated-8843438_1280.jpg',
-             'https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png',
              'https://cdn.pixabay.com/photo/2024/03/05/05/24/ai-generated-8613746_960_720.png',
              'https://cdn.pixabay.com/photo/2024/05/12/18/34/ai-generated-8757463_960_720.png',
              'https://cdn.pixabay.com/photo/2024/07/03/14/52/tunnel-8870193_1280.jpg',
              'https://cdn.pixabay.com/photo/2014/09/29/16/27/keller-466197_1280.jpg',
              'https://cdn.pixabay.com/photo/2024/06/06/06/58/homeopathic-8812002_1280.jpg',
+             'https://cdn.pixabay.com/photo/2014/01/18/10/14/vaulted-cellar-247391_1280.jpg',
+             'https://cdn.pixabay.com/photo/2013/10/21/14/09/domaine-de-cheverny-loire-199010_1280.jpg',
+             'https://cdn.pixabay.com/photo/2018/01/21/18/03/theater-3097190_1280.jpg',
+             'https://cdn.pixabay.com/photo/2019/12/19/09/07/deco-4705709_1280.jpg',
+             'https://cdn.pixabay.com/photo/2016/12/27/20/54/russia-1934884_1280.jpg',
+             '',
             ];
             const localImages = ['images/apteka.jpg', 'images/castle_gate.png'];
             const allImages = [...backgroundImages, ...localImages].filter(Boolean);
