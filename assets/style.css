@@ -345,7 +345,7 @@
         }
 
         #frame-10-agility { 
-            background-image: url('images/apteka.jpg'); 
+            background-image: url(https://cdn.pixabay.com/photo/2024/07/03/14/52/tunnel-8870193_1280.jpg); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -363,7 +363,7 @@
         }
 
         #frame-11-agility { 
-            background-image: url(https://cdn.pixabay.com/photo/2024/06/06/06/58/homeopathic-8812002_1280.jpg); 
+            background-image: url(images/apteka.jpg); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -373,7 +373,7 @@
         }
 
         #frame-12-agility { 
-            background-image: url(https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png); 
+            background-image: url(); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -383,7 +383,7 @@
         }
 
         #frame-13-agility { 
-            background-image: url(https://cdn.pixabay.com/photo/2014/09/29/16/27/keller-466197_1280.jpg); 
+            background-image: url(); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -393,7 +393,7 @@
         }
 
         #frame-14-agility { 
-            background-image: url(https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png); 
+            background-image: url(); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -403,7 +403,7 @@
         }
 
         #frame-15-agility { 
-            background-image: url(https://cdn.pixabay.com/photo/2024/08/22/22/03/bed-8990246_960_720.png); 
+            background-image: url(); 
             width: 100vw;
             height: 100vh;
             background-size: 100% 100%;
@@ -512,4 +512,29 @@
 
         .spacer {
          height: 30%;
+        }
+
+        #frame-1 .pod-text,
+        #frame-2 .pod-text,
+        #frame-3 .pod-text,
+        #frame-4 .pod-text,
+        #frame-5 .pod-text,
+        #frame-6 .pod-text,
+        #frame-7 .pod-text {
+          display: none;
+        }
+
+        #frame-1 .knopka:hover .pod-text,
+        #frame-2 .knopka:hover .pod-text,
+        #frame-3 .knopka:hover .pod-text,
+        #frame-4 .knopka:hover .pod-text,
+        #frame-5 .knopka:hover .pod-text,
+        #frame-6 .knopka:hover .pod-text,
+        #frame-7 .knopka:hover .pod-text {
+          display: block;
+        }
+
+        .pod-text {
+            color: #290000;
+         font-size: 1.1vw;  
         }
