@@ -454,10 +454,10 @@
 
         function askName(gender) {
          const genderText = (gender === 'male') ? 'парень' : 'девушка';
-         const name = prompt(`отлично,как тебя звать?`);
+         const name = prompt(currentLang === 'ru' ? "отлично, как тебя звать?" : "מצוין, איך קוראים לך?");
 
            if (name) {
-             alert(`отлично, приветствую тебя, ${name}!`);
+             alert(currentLang === 'ru' ? `отлично, приветствую тебя, ${name}!` : `מצוין, אני מקדם אותך בברכה, ${name}!`);
       
                 player = {
                  name: name,
